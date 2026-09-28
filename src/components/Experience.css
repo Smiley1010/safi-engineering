@@ -1,0 +1,325 @@
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.safi-experience {
+  background: #ffffff;
+  color: #111111;
+  padding: 160px 5vw 140px;
+  overflow: hidden;
+}
+
+.experience-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   TOP LABEL
+===================================================== */
+
+.experience-label {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  margin-bottom: 100px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.experience-label span:first-child {
+  color: #f7941d;
+}
+
+.experience-label span:last-child {
+  color: #777777;
+}
+
+.experience-label div {
+  flex: 1;
+  height: 1px;
+  background: #dedede;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.experience-heading p {
+  margin: 0 0 28px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #777777;
+}
+
+.experience-heading h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(65px, 8vw, 120px);
+  line-height: 0.88;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+
+.experience-heading h2 em {
+  color: #f7941d;
+  font-style: italic;
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.experience-intro {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 70px;
+}
+
+.experience-intro p {
+  max-width: 620px;
+
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555555;
+}
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+
+  gap: 1px;
+
+  margin-top: 110px;
+
+  background: #dcdcdc;
+
+  border: 1px solid #dcdcdc;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.experience-card {
+  position: relative;
+
+  min-height: 450px;
+
+  padding: 42px 38px;
+
+  background: #f5f4f0;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+.experience-card-large {
+  background: #111111;
+  color: #ffffff;
+}
+
+.experience-card:hover {
+  background: #f7941d;
+  color: #ffffff;
+}
+
+.experience-card-number {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  color: #f7941d;
+  letter-spacing: 0.08em;
+}
+
+.experience-card-large .experience-card-number {
+  color: #f7941d;
+}
+
+.experience-card h3 {
+  margin: auto 0 30px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 3vw, 52px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.experience-card p {
+  margin: 0;
+
+  max-width: 430px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #777777;
+
+  transition: color 0.3s ease;
+}
+
+.experience-card-large p {
+  color: #aaaaaa;
+}
+
+.experience-card:hover p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.experience-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 50px;
+  align-items: center;
+
+  margin-top: 90px;
+}
+
+.experience-bottom-line {
+  height: 1px;
+  background: #dcdcdc;
+}
+
+.experience-bottom p {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666666;
+}
+
+.experience-bottom-accent {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.experience-bottom-accent span {
+  display: block;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #f7941d;
+}
+
+.experience-bottom-accent span:nth-child(2) {
+  width: 35px;
+  border-radius: 999px;
+}
+
+.experience-bottom-accent span:nth-child(3) {
+  background: #111111;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .safi-experience {
+    padding: 110px 6vw;
+  }
+
+  .experience-heading h2 {
+    font-size: clamp(58px, 10vw, 90px);
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    min-height: 360px;
+  }
+
+  .experience-bottom {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .experience-bottom-line {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .safi-experience {
+    padding: 90px 5vw;
+  }
+
+  .experience-label {
+    margin-bottom: 65px;
+    gap: 15px;
+  }
+
+  .experience-heading h2 {
+    font-size: clamp(50px, 14vw, 75px);
+  }
+
+  .experience-intro {
+    margin-top: 55px;
+  }
+
+  .experience-intro p {
+    font-size: 16px;
+  }
+
+  .experience-grid {
+    margin-top: 70px;
+    border-radius: 24px;
+  }
+
+  .experience-card {
+    min-height: 390px;
+    padding: 30px 25px;
+  }
+
+  .experience-card h3 {
+    font-size: 36px;
+  }
+
+  .experience-card p {
+    font-size: 14px;
+  }
+
+  .experience-bottom {
+    margin-top: 60px;
+  }
+}

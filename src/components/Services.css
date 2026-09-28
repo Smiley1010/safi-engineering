@@ -1,0 +1,425 @@
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.safi-services {
+  background: #111111;
+  color: #ffffff;
+  padding: 150px 5vw;
+  overflow: hidden;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.services-label {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 90px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.services-label span:first-child {
+  color: #f7941d;
+}
+
+.services-label span:last-child {
+  color: #777777;
+}
+
+.services-label div {
+  flex: 1;
+  height: 1px;
+  background: #333333;
+}
+
+.services-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 100px;
+}
+
+.services-heading p {
+  margin: 0 0 28px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #777777;
+}
+
+.services-heading h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(58px, 7vw, 100px);
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.services-heading h2 em {
+  color: #f7941d;
+  font-style: italic;
+}
+
+.services-intro {
+  align-self: end;
+  max-width: 450px;
+}
+
+.services-intro p {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #b7b7b7;
+}
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.services-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: stretch;
+}
+
+/* =====================================================
+   SERVICE LIST
+===================================================== */
+
+.services-list {
+  border-top: 1px solid #333333;
+}
+
+.service-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 55px 1fr 45px;
+  gap: 25px;
+
+  padding: 30px 0;
+
+  border-bottom: 1px solid #333333;
+
+  cursor: pointer;
+
+  transition:
+    padding 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-item::before {
+  content: "";
+
+  position: absolute;
+  top: -1px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #f7941d;
+
+  transition: width 0.4s ease;
+}
+
+.service-item.active {
+  padding-left: 18px;
+  padding-right: 18px;
+  border-color: #444444;
+}
+
+.service-item.active::before {
+  width: 100%;
+}
+
+.service-number {
+  padding-top: 4px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  color: #777777;
+
+  transition: color 0.3s ease;
+}
+
+.service-item.active .service-number {
+  color: #f7941d;
+}
+
+/* =====================================================
+   SERVICE INFO
+===================================================== */
+
+.service-info h3 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(17px, 1.5vw, 23px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+
+  transition: color 0.3s ease;
+}
+
+.service-item.active .service-info h3 {
+  color: #f7941d;
+}
+
+.service-description {
+  max-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.45s ease,
+    opacity 0.35s ease,
+    margin-top 0.35s ease;
+}
+
+.service-item.active .service-description {
+  max-height: 180px;
+  opacity: 1;
+  margin-top: 18px;
+}
+
+.service-description p {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #999999;
+}
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.service-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #444444;
+  border-radius: 50%;
+
+  font-size: 17px;
+  color: #777777;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-item.active .service-arrow {
+  background: #f7941d;
+  border-color: #f7941d;
+  color: #ffffff;
+  transform: rotate(45deg);
+}
+
+/* =====================================================
+   IMAGE PANEL
+===================================================== */
+
+.services-image-panel {
+  position: relative;
+
+  min-height: 620px;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  background: #222222;
+}
+
+.services-image-panel img {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+
+  object-fit: cover;
+
+  animation: serviceImageIn 0.5s ease;
+}
+
+@keyframes serviceImageIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.services-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.05) 65%
+    );
+}
+
+.services-image-content {
+  position: absolute;
+
+  left: 32px;
+  right: 32px;
+  bottom: 30px;
+}
+
+.services-image-content span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  color: #f7941d;
+  letter-spacing: 0.12em;
+}
+
+.services-image-content h3 {
+  margin: 0;
+
+  max-width: 500px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .safi-services {
+    padding: 110px 6vw;
+  }
+
+  .services-heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  .services-intro {
+    max-width: 600px;
+  }
+
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .services-image-panel {
+    min-height: 500px;
+    order: -1;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .safi-services {
+    padding: 90px 5vw;
+  }
+
+  .services-label {
+    margin-bottom: 60px;
+    gap: 15px;
+  }
+
+  .services-heading h2 {
+    font-size: clamp(52px, 15vw, 75px);
+  }
+
+  .services-intro p {
+    font-size: 16px;
+  }
+
+  .services-layout {
+    gap: 45px;
+  }
+
+  .service-item {
+    grid-template-columns: 35px 1fr 35px;
+    gap: 12px;
+    padding: 25px 0;
+  }
+
+  .service-item.active {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .service-info h3 {
+    font-size: 16px;
+  }
+
+  .service-description p {
+    font-size: 14px;
+  }
+
+  .service-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .services-image-panel {
+    min-height: 420px;
+    border-radius: 24px;
+  }
+
+  .services-image-content {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+  }
+}
