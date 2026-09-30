@@ -1,59 +1,54 @@
-/* =========================================================
-   SAFI — NAVBAR + HERO
-   Orange / Black / White
-   ========================================================= */
-
-
-/* =========================================================
-   FONT IMPORTS
-   ========================================================= */
+/* =====================================================
+   GOOGLE FONTS
+===================================================== */
 
 @import url(
-  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+  'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap'
 );
 
 
-/* =========================================================
-   GLOBAL BOX SIZING
-   ========================================================= */
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
 
 * {
   box-sizing: border-box;
 }
 
-
-/* =========================================================
-   SMOOTH PAGE SCROLLING
-   ========================================================= */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
 
-/* =========================================================
-   SAFI VARIABLES
-   ========================================================= */
+
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 :root {
   --safi-orange: #f7941d;
   --safi-orange-dark: #df7510;
-
   --safi-black: #111111;
   --safi-white: #ffffff;
-
   --safi-grey: #777777;
-
-  --safi-radius: 999px;
-
-  --safi-transition:
-    0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-   ========================================================= */
+===================================================== */
 
 .safi-hero {
   position: relative;
@@ -62,17 +57,18 @@ html {
   height: 100vh;
   min-height: 700px;
 
+  margin: 0;
+  padding: 0;
+
   overflow: hidden;
 
-  background: var(--safi-black);
-
-  color: var(--safi-white);
+  background: #111111;
 }
 
 
-/* =========================================================
-   HERO BACKGROUND IMAGE
-   ========================================================= */
+/* =====================================================
+   HERO BACKGROUND
+===================================================== */
 
 .safi-hero-background {
   position: absolute;
@@ -82,77 +78,39 @@ html {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  display: block;
 
+  object-fit: cover;
   object-position: center;
 
   z-index: 0;
-
-  transform: scale(1.02);
-
-  animation:
-    safiHeroImageIn
-    1.6s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
 }
 
 
-@keyframes safiHeroImageIn {
-
-  from {
-    opacity: 0;
-    transform: scale(1.08);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1.02);
-  }
-
-}
-
-
-/* =========================================================
-   HERO IMAGE OVERLAY
-   ========================================================= */
+/* =====================================================
+   HERO OVERLAY
+===================================================== */
 
 .safi-hero-overlay {
   position: absolute;
 
   inset: 0;
 
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.12) 45%,
+      rgba(0, 0, 0, 0.58) 100%
+    );
+
   z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.63) 0%,
-      rgba(0, 0, 0, 0.35) 55%,
-      rgba(0, 0, 0, 0.18) 100%
-    );
 }
 
 
-.safi-hero-overlay::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.55),
-      transparent 45%
-    );
-}
-
-
-/* =========================================================
+/* =====================================================
    NAVBAR
-   ========================================================= */
+===================================================== */
 
 .safi-navbar {
   position: absolute;
@@ -168,24 +126,161 @@ html {
   display: flex;
   align-items: center;
 
-  z-index: 100;
+  z-index: 1000;
 
-  color: var(--safi-white);
-
-  box-sizing: border-box;
+  color: #ffffff;
 
   transition:
-    background 0.4s ease,
-    box-shadow 0.4s ease,
-    height 0.4s ease,
-    color 0.4s ease,
-    padding 0.4s ease;
+    top 0.35s ease,
+    left 0.35s ease,
+    width 0.35s ease,
+    height 0.35s ease,
+    background 0.35s ease,
+    border 0.35s ease,
+    box-shadow 0.35s ease,
+    backdrop-filter 0.35s ease;
 }
 
 
-/* =========================================================
-   STICKY / SCROLLED NAVBAR
-   ========================================================= */
+/* =====================================================
+   LOGO
+===================================================== */
+
+.safi-logo {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.safi-logo img {
+  display: block;
+
+  width: 145px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.safi-navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  margin-left: auto;
+}
+
+
+/* =====================================================
+   NAVIGATION LINKS
+===================================================== */
+
+.safi-navigation button {
+  position: relative;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.safi-navigation button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--safi-orange);
+
+  transition: width 0.25s ease;
+}
+
+.safi-navigation button:hover {
+  color: var(--safi-orange);
+}
+
+.safi-navigation button:hover::after {
+  width: 100%;
+}
+
+
+/* =====================================================
+   NAVBAR CTA
+===================================================== */
+
+.safi-navbar-button {
+  flex-shrink: 0;
+
+  margin-left: 30px;
+
+  padding: 17px 29px;
+
+  border: 1px solid var(--safi-orange);
+  border-radius: 999px;
+
+  background: var(--safi-orange);
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.safi-navbar-button:hover {
+  background: var(--safi-orange-dark);
+  border-color: var(--safi-orange-dark);
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SCROLLED NAVBAR — DARK GLASSMORPHISM
+===================================================== */
 
 .safi-navbar-scrolled {
   position: fixed;
@@ -198,879 +293,551 @@ html {
 
   padding: 0 28px;
 
-  box-sizing: border-box;
+  background: rgba(20, 20, 20, 0.18);
 
-  background:
-    rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  color: var(--safi-black);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 
   border-radius: 999px;
 
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.12);
+    0 12px 35px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 
-  animation:
-    navbarDrop
-    0.4s
-    cubic-bezier(0.22, 1, 0.36, 1);
+  color: #ffffff;
 }
 
 
-@keyframes navbarDrop {
+/* =====================================================
+   SCROLLED NAVBAR LINKS
+===================================================== */
 
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
+.safi-navbar-scrolled .safi-navigation button {
+  color: #ffffff;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+.safi-navbar-scrolled .safi-navigation button:hover {
+  color: var(--safi-orange);
 }
 
 
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-.safi-logo {
-  display: flex;
-
-  align-items: center;
-
-  flex-shrink: 0;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
-  cursor: pointer;
-}
-
-
-.safi-logo img {
-  width: 140px;
-
-  height: auto;
-
-  display: block;
-}
-
-
-/* =========================================================
-   DESKTOP NAVIGATION
-   ========================================================= */
-
-.safi-navigation {
-  margin-left: auto;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 30px;
-}
-
-
-.safi-navigation button {
-  position: relative;
-
-  padding: 5px 0;
-
-  border: none;
-
-  background: transparent;
-
-  color: inherit;
-
-  cursor: pointer;
-
-  font-family:
-    "Space Grotesk",
-    sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  letter-spacing: -0.01em;
-
-  white-space: nowrap;
-
-  transition:
-    color 0.3s ease;
-}
-
-
-/* NAV UNDERLINE */
-
-.safi-navigation button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-
-  bottom: -7px;
-
-  width: 0;
-
-  height: 2px;
-
-  border-radius: 10px;
-
-  background:
-    var(--safi-orange);
-
-  transition:
-    width 0.3s ease;
-}
-
-
-.safi-navigation button:hover {
-  color:
-    var(--safi-orange);
-}
-
-
-.safi-navigation button:hover::after {
-  width: 100%;
-}
-
-
-/* =========================================================
-   NAVBAR CONTACT BUTTON
-   ========================================================= */
-
-.safi-navbar-button {
-  flex-shrink: 0;
-
-  margin-left: 30px;
-
-  padding:
-    13px 22px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-
-  border-radius:
-    999px;
-
-  background:
-    var(--safi-orange);
-
-  color:
-    var(--safi-white);
-
-  cursor: pointer;
-
-  font-family:
-    "Space Grotesk",
-    sans-serif;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
-}
-
-
-.safi-navbar-button:hover {
-  background:
-    var(--safi-orange-dark);
-
-  transform:
-    translateY(-2px);
-}
-
-
-/* =========================================================
+/* =====================================================
    HERO CONTENT
-   ========================================================= */
+===================================================== */
 
 .safi-hero-content {
   position: relative;
 
-  z-index: 5;
+  z-index: 2;
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  padding:
-    100px 7vw 0;
+  padding: 100px 5vw 80px;
 
   text-align: center;
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO TEXT
-   ========================================================= */
+===================================================== */
 
 .safi-hero-text {
   width: 100%;
+  max-width: 1450px;
 
-  max-width: 1050px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  animation:
-    heroTextIn
-    1.1s
-    0.2s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    both;
+  margin: 0 auto;
 }
 
 
-@keyframes heroTextIn {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-}
-
-
-/* =========================================================
+/* =====================================================
    HERO HEADING
-   ========================================================= */
+===================================================== */
 
 .safi-hero-text h1 {
   margin: 0;
 
-  max-width: 1050px;
+  font-family: "Trebuchet MS", Trebuchet, sans-serif;
 
-  color:
-    var(--safi-white);
-
-  font-family:
-    "Playfair Display",
-    serif;
-
-  font-size:
-    clamp(65px, 8vw, 130px);
-
-  font-weight: 500;
+  font-size: clamp(58px, 8vw, 130px);
 
   line-height: 0.95;
 
-  letter-spacing:
-    -0.055em;
+  font-weight: 700;
 
-  text-align: center;
+  letter-spacing: -0.055em;
+
+  color: #ffffff;
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO DESCRIPTION
-   ========================================================= */
+===================================================== */
 
 .safi-hero-text p {
-  margin:
-    28px 0 32px;
+  max-width: 700px;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.92
-    );
+  margin: 28px auto 0;
 
-  font-family:
-    "DM Sans",
-    sans-serif;
+  font-family: "DM Sans", sans-serif;
 
-  font-size:
-    18px;
+  font-size: 18px;
+  line-height: 1.6;
 
-  line-height:
-    1.6;
-
-  text-align:
-    center;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 
-/* =========================================================
-   HERO BUTTON CONTAINER
-   ========================================================= */
+/* =====================================================
+   HERO ACTIONS
+===================================================== */
 
 .safi-hero-actions {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  gap: 14px;
+  gap: 18px;
+
+  margin-top: 42px;
 }
 
 
-/* =========================================================
-   HERO BUTTON BASE
-   ========================================================= */
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
 
 .safi-hero-button {
-  min-width: 195px;
+  min-width: 250px;
 
-  padding:
-    17px 28px;
+  padding: 20px 30px;
 
-  display: inline-flex;
+  border-radius: 999px;
 
-  align-items: center;
-  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
 
-  border-radius:
-    999px;
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
 
   cursor: pointer;
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
-
-  font-size:
-    12px;
-
-  font-weight:
-    700;
-
-  white-space:
-    nowrap;
-
   transition:
-    transform 0.3s ease,
     background 0.3s ease,
+    border-color 0.3s ease,
     color 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.3s ease;
 }
 
 
-/* =========================================================
+/* =====================================================
    ORANGE HERO BUTTON
-   ========================================================= */
+===================================================== */
 
 .safi-orange-button {
-  border:
-    1px solid
-    var(--safi-orange);
+  border: 1px solid var(--safi-orange);
 
-  background:
-    var(--safi-orange);
+  background: var(--safi-orange);
 
-  color:
-    var(--safi-white);
+  color: #ffffff;
 }
-
 
 .safi-orange-button:hover {
-  background:
-    var(--safi-orange-dark);
+  background: var(--safi-orange-dark);
 
-  border-color:
-    var(--safi-orange-dark);
+  border-color: var(--safi-orange-dark);
 
-  transform:
-    translateY(-3px);
+  transform: translateY(-3px);
 }
 
 
-/* =========================================================
+/* =====================================================
    TRANSPARENT HERO BUTTON
-   ========================================================= */
+===================================================== */
 
 .safi-transparent-button {
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.75
-    );
+  border: 1px solid rgba(255, 255, 255, 0.65);
 
-  background:
-    transparent;
+  background: transparent;
 
-  color:
-    var(--safi-white);
+  color: #ffffff;
 }
-
 
 .safi-transparent-button:hover {
-  background:
-    var(--safi-white);
+  background: rgba(255, 255, 255, 0.08);
 
-  border-color:
-    var(--safi-white);
+  border-color: #ffffff;
 
-  color:
-    var(--safi-black);
-
-  transform:
-    translateY(-3px);
+  transform: translateY(-3px);
 }
 
 
-/* =========================================================
+/* =====================================================
    SCROLL INDICATOR
-   ========================================================= */
+===================================================== */
+
+/* =====================================================
+   SCROLL INDICATOR — ORIGINAL VERSION
+===================================================== */
 
 .safi-scroll-indicator {
   position: absolute;
 
   left: 50%;
+  bottom: 28px;
 
-  bottom: 30px;
-
-  transform:
-    translateX(-50%);
-
-  z-index: 10;
+  z-index: 5;
 
   display: flex;
-
+  flex-direction: column;
   align-items: center;
 
-  gap: 10px;
+  gap: 8px;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.8
-    );
+  transform: translateX(-50%);
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  color: #ffffff;
 
-  font-size:
-    10px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
 
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    0.15em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-
 
 .safi-scroll-line {
-  width: 35px;
+  display: block;
 
-  height: 1px;
+  width: 1px;
+  height: 38px;
 
-  background:
-    var(--safi-orange);
+  background: #f7941d;
 }
-
 
 .safi-scroll-arrow {
-  font-size:
-    16px;
+  color: #f7941d;
 
-  animation:
-    safiScrollBounce
-    1.8s infinite;
+  font-size: 15px;
+  line-height: 1;
+
+  animation: scrollBounce 1.8s ease-in-out infinite;
 }
 
-
-@keyframes safiScrollBounce {
-
+@keyframes scrollBounce {
   0%,
   100% {
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
 
   50% {
-    transform:
-      translateY(5px);
+    transform: translateY(5px);
   }
-
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE MENU BUTTON
-   ========================================================= */
+===================================================== */
 
 .safi-mobile-menu {
   display: none;
 
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
   margin-left: auto;
 
-  width: 46px;
-  height: 46px;
+  padding: 0;
 
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 
-  border-radius:
-    50%;
+  border-radius: 50%;
 
-  background:
-    var(--safi-orange);
+  background: transparent;
 
   cursor: pointer;
-
-  flex-direction:
-    column;
-
-  align-items:
-    center;
-
-  justify-content:
-    center;
-
-  gap: 6px;
 }
-
 
 .safi-mobile-menu span {
-  width: 19px;
+  position: absolute;
 
-  height: 2px;
+  left: 50%;
 
-  border-radius:
-    5px;
+  width: 17px;
+  height: 1.5px;
 
-  background:
-    var(--safi-white);
+  background: #ffffff;
+
+  transform: translateX(-50%);
 
   transition:
-    transform 0.3s ease;
+    transform 0.3s ease,
+    top 0.3s ease;
+}
+
+.safi-mobile-menu span:first-child {
+  top: 17px;
+}
+
+.safi-mobile-menu span:last-child {
+  top: 24px;
 }
 
 
-/* MOBILE MENU ANIMATION */
+/* =====================================================
+   MOBILE MENU OPEN
+===================================================== */
 
 .safi-mobile-menu.open span:first-child {
+  top: 21px;
+
   transform:
-    translateY(4px)
+    translateX(-50%)
     rotate(45deg);
 }
 
-
 .safi-mobile-menu.open span:last-child {
+  top: 21px;
+
   transform:
-    translateY(-4px)
+    translateX(-50%)
     rotate(-45deg);
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE NAVIGATION
-   ========================================================= */
+===================================================== */
 
 .safi-mobile-navigation {
-  position: fixed;
+  display: none;
 
-  top: 85px;
+  position: absolute;
 
+  top: 82px;
   left: 5%;
 
   width: 90%;
 
-  z-index: 90;
+  padding: 25px;
 
-  padding: 20px;
+  flex-direction: column;
 
-  display: none;
+  gap: 5px;
 
-  flex-direction:
-    column;
+  background: rgba(20, 20, 20, 0.92);
 
-  gap: 4px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  background:
-    var(--safi-white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-  border-radius:
-    28px;
+  border-radius: 24px;
 
   box-shadow:
-    0 15px 40px
-    rgba(
-      0,
-      0,
-      0,
-      0.15
-    );
-}
+    0 15px 40px rgba(0, 0, 0, 0.3);
 
+  z-index: 1001;
+}
 
 .safi-mobile-navigation.show {
-  display:
-    flex;
+  display: flex;
 }
-
 
 .safi-mobile-navigation button {
   width: 100%;
 
-  padding:
-    16px;
+  padding: 15px 5px;
 
-  border: none;
+  border: 0;
 
-  border-radius:
-    15px;
+  background: transparent;
 
-  background:
-    transparent;
+  color: #ffffff;
 
-  color:
-    var(--safi-black);
+  text-align: left;
 
-  text-align:
-    left;
+  font-family: "Space Grotesk", sans-serif;
 
-  cursor:
-    pointer;
+  font-size: 14px;
+  font-weight: 600;
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  cursor: pointer;
 
-  font-size:
-    14px;
-
-  font-weight:
-    600;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
+  transition: color 0.25s ease;
 }
-
 
 .safi-mobile-navigation button:hover {
-  background:
-    #f5f5f5;
-
-  color:
-    var(--safi-orange);
+  color: var(--safi-orange);
 }
 
 
-/* =========================================================
+/* =====================================================
    TABLET
-   ========================================================= */
+===================================================== */
 
-@media (max-width: 1100px) {
-
-  .safi-navbar {
-    padding:
-      0 4vw;
-  }
+@media (max-width: 1050px) {
 
   .safi-navigation {
-    gap:
-      20px;
+    gap: 20px;
   }
 
   .safi-navbar-button {
-    margin-left:
-      20px;
+    margin-left: 18px;
+
+    padding: 15px 22px;
   }
 
+  .safi-hero-text h1 {
+    font-size: clamp(55px, 8vw, 95px);
+  }
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
-   ========================================================= */
+===================================================== */
 
 @media (max-width: 768px) {
 
   .safi-navbar {
-    height:
-      78px;
+    height: 76px;
 
-    padding:
-      0 6vw;
+    padding: 0 5vw;
   }
-
-
-  .safi-navbar-scrolled {
-    top:
-      10px;
-
-    left:
-      4vw;
-
-    width:
-      92%;
-
-    height:
-      65px;
-
-    padding:
-      0 20px;
-  }
-
 
   .safi-logo img {
-    width:
-      120px;
+    width: 125px;
   }
 
+  .safi-navigation {
+    display: none;
+  }
 
-  .safi-navigation,
   .safi-navbar-button {
-    display:
-      none;
+    display: none;
   }
-
 
   .safi-mobile-menu {
-    display:
-      flex;
+    display: block;
   }
 
+
+  /* SCROLLED NAVBAR */
+
+  .safi-navbar-scrolled {
+    top: 12px;
+    left: 4%;
+
+    width: 92%;
+    height: 64px;
+
+    padding: 0 18px;
+  }
+
+
+  /* HERO */
 
   .safi-hero-content {
-    padding:
-      90px 6vw 0;
-  }
+    height: 100vh;
 
+    padding: 100px 5vw 100px;
+  }
 
   .safi-hero-text h1 {
-    font-size:
-      clamp(
-        52px,
-        14vw,
-        82px
-      );
+    font-size: clamp(48px, 13vw, 72px);
 
-    line-height:
-      0.98;
+    letter-spacing: -0.045em;
   }
-
 
   .safi-hero-text p {
-    font-size:
-      15px;
+    max-width: 450px;
 
-    max-width:
-      500px;
+    margin-top: 22px;
+
+    font-size: 16px;
   }
 
+
+  /* HERO BUTTONS */
 
   .safi-hero-actions {
-    flex-direction:
-      column;
+    width: 100%;
 
-    width:
-      100%;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 32px;
   }
-
 
   .safi-hero-button {
-    width:
-      min(
-        100%,
-        280px
-      );
+    width: min(100%, 320px);
+
+    min-width: 0;
+
+    padding: 17px 25px;
   }
 
+
+  /* MOBILE NAVIGATION */
+
+  .safi-mobile-navigation {
+    top: 86px;
+  }
+
+
+  /* SCROLL INDICATOR */
 
   .safi-scroll-indicator {
-    display:
-      none;
+    bottom: 18px;
   }
-
 }
 
 
-/* =========================================================
+/* =====================================================
    SMALL MOBILE
-   ========================================================= */
+===================================================== */
 
 @media (max-width: 480px) {
 
-  .safi-hero {
-    min-height:
-      650px;
+  .safi-navbar {
+    padding: 0 4vw;
   }
 
-
-  .safi-hero-background {
-    object-position:
-      60% center;
+  .safi-logo img {
+    width: 115px;
   }
 
+  .safi-navbar-scrolled {
+    left: 3%;
 
-  .safi-hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.72),
-        rgba(0, 0, 0, 0.35)
-      );
+    width: 94%;
+
+    padding: 0 15px;
   }
-
 
   .safi-hero-text h1 {
-    font-size:
-      53px;
+    font-size: clamp(43px, 13vw, 62px);
   }
-
 
   .safi-hero-text p {
-    font-size:
-      15px;
-
-    margin-top:
-      22px;
+    font-size: 15px;
   }
-
 
   .safi-hero-button {
-    min-width:
-      0;
-
-    width:
-      100%;
+    font-size: 11px;
   }
-
 }

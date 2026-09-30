@@ -14,19 +14,22 @@
   margin: 0 auto;
 }
 
+
 /* =====================================================
    TOP
 ===================================================== */
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr 0.8fr;
-  gap: 80px;
 
-  padding-bottom: 80px;
+  /* Logo stays on top, navigation/contact will move later */
+  grid-template-columns: 1fr;
 
-  border-bottom: 1px solid #d5d3ce;
+  gap: 0;
+
+  padding-bottom: 70px;
 }
+
 
 /* =====================================================
    BRAND
@@ -49,8 +52,10 @@
   color: #777777;
 }
 
+
 /* =====================================================
-   NAVIGATION
+   NAVIGATION + CONTACT
+   Positioned beside the big SAFI wordmark
 ===================================================== */
 
 .footer-navigation,
@@ -59,6 +64,63 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+
+/* =====================================================
+   WORDMARK AREA
+===================================================== */
+
+.footer-wordmark-area {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 80px;
+
+  align-items: end;
+
+  border-top: 1px solid #d5d3ce;
+  padding-top: 65px;
+}
+
+
+/* =====================================================
+   WORDMARK
+===================================================== */
+
+.footer-wordmark {
+  margin-top: 0;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(120px, 22vw, 330px);
+  line-height: 0.7;
+  font-weight: 500;
+  letter-spacing: -0.08em;
+
+  color: #111111;
+  white-space: nowrap;
+}
+
+.footer-wordmark span {
+  color: #f7941d;
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.footer-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+
+  align-self: end;
+  padding-bottom: 10px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .footer-navigation > span,
 .footer-contact > span {
@@ -94,6 +156,7 @@
   transform: translateX(4px);
 }
 
+
 /* =====================================================
    CONTACT
 ===================================================== */
@@ -115,26 +178,6 @@
   color: #f7941d;
 }
 
-/* =====================================================
-   WORDMARK
-===================================================== */
-
-.footer-wordmark {
-  margin-top: 65px;
-
-  font-family: "Playfair Display", serif;
-  font-size: clamp(120px, 22vw, 330px);
-  line-height: 0.7;
-  font-weight: 500;
-  letter-spacing: -0.08em;
-
-  color: #111111;
-  white-space: nowrap;
-}
-
-.footer-wordmark span {
-  color: #f7941d;
-}
 
 /* =====================================================
    BOTTOM
@@ -176,6 +219,7 @@
   color: #f7941d;
 }
 
+
 /* =====================================================
    TABLET
 ===================================================== */
@@ -186,20 +230,21 @@
     padding: 75px 6vw 25px;
   }
 
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+  .footer-wordmark-area {
+    grid-template-columns: 1fr;
+    gap: 50px;
   }
 
-  .footer-brand {
-    grid-column: 1 / -1;
+  .footer-side {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 
   .footer-wordmark {
-    margin-top: 55px;
     font-size: 22vw;
   }
 }
+
 
 /* =====================================================
    MOBILE
@@ -212,22 +257,25 @@
   }
 
   .footer-top {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    padding-bottom: 60px;
-  }
-
-  .footer-brand {
-    grid-column: auto;
+    padding-bottom: 50px;
   }
 
   .footer-brand img {
     width: 130px;
   }
 
+  .footer-wordmark-area {
+    gap: 45px;
+    padding-top: 50px;
+  }
+
   .footer-wordmark {
-    margin-top: 50px;
     font-size: 28vw;
+  }
+
+  .footer-side {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 
   .footer-bottom {

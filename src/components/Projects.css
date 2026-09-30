@@ -14,8 +14,9 @@
   margin: 0 auto;
 }
 
+
 /* =====================================================
-   TOP LABEL
+   SECTION LABEL
 ===================================================== */
 
 .projects-label {
@@ -45,6 +46,7 @@
   background: #d5d3ce;
 }
 
+
 /* =====================================================
    HEADING
 ===================================================== */
@@ -52,13 +54,15 @@
 .projects-heading {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
+
   gap: 100px;
+
   align-items: end;
 
-  margin-bottom: 90px;
+  margin-bottom: 80px;
 }
 
-.projects-heading p:first-child {
+.projects-heading > div p {
   margin: 0 0 25px;
 
   font-family: "Space Grotesk", sans-serif;
@@ -71,10 +75,18 @@
 .projects-heading h2 {
   margin: 0;
 
-  font-family: "Playfair Display", serif;
-  font-size: clamp(60px, 7vw, 105px);
+  font-family:
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
+
+  font-size:
+    clamp(60px, 7vw, 105px);
+
   line-height: 0.9;
+
   font-weight: 500;
+
   letter-spacing: -0.05em;
 }
 
@@ -89,25 +101,36 @@
   margin: 0;
 
   font-family: "DM Sans", sans-serif;
+
   font-size: 17px;
+
   line-height: 1.8;
+
   color: #555555;
 }
 
+
 /* =====================================================
-   FEATURED PROJECT
+   SLIDESHOW
 ===================================================== */
 
-.featured-project {
-  width: 100%;
-  margin-bottom: 70px;
-}
-
-.featured-image {
+.projects-slideshow {
   position: relative;
 
   width: 100%;
-  height: min(70vh, 720px);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.project-slide-image {
+  position: relative;
+
+  width: 100%;
+
+  height: min(68vh, 700px);
 
   overflow: hidden;
 
@@ -115,8 +138,7 @@
 
   background: #222222;
 }
-
-.featured-image img {
+.project-slide-image img {
   position: absolute;
   inset: 0;
 
@@ -125,186 +147,239 @@
 
   object-fit: cover;
 
-  animation: projectImageIn 0.6s ease;
+  animation: projectImageReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@keyframes projectImageIn {
-  from {
+@keyframes projectImageReveal {
+
+  0% {
     opacity: 0;
-    transform: scale(1.04);
+    transform: scale(1.08) translateX(25px);
   }
 
-  to {
-    opacity: 1;
-    transform: scale(1);
+  45% {
+    opacity: 0.6;
   }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+
 }
 
-.featured-overlay {
+.project-image-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.85),
       rgba(0, 0, 0, 0.05) 70%
     );
 }
 
-.featured-project-number {
+.project-image-number {
   position: absolute;
 
   top: 30px;
   right: 35px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
+
+  font-size: 13px;
+
   color: #ffffff;
+
+  letter-spacing: 0.08em;
 }
 
-.featured-project-info {
+
+/* =====================================================
+   PROJECT INFORMATION
+===================================================== */
+
+.project-slide-info {
   position: absolute;
 
-  left: 40px;
-  right: 40px;
-  bottom: 38px;
+  left: 45px;
+  right: 45px;
+  bottom: 105px;
 
-  max-width: 850px;
+  z-index: 2;
+
+  max-width: 1000px;
+
+  animation:
+    projectTextIn
+    0.6s
+    ease;
 }
 
-.featured-project-info span {
-  display: block;
+@keyframes projectTextIn {
 
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.project-slide-location {
   margin-bottom: 15px;
 
-  font-family: "Space Grotesk", sans-serif;
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.13em;
+
   color: #f7941d;
+
   text-transform: uppercase;
 }
 
-.featured-project-info h3 {
+.project-slide-info h3 {
   margin: 0;
 
-  font-family: "Playfair Display", serif;
-  font-size: clamp(28px, 4vw, 58px);
+  max-width: 1000px;
+
+  font-family:
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
+
+  font-size:
+    clamp(28px, 4vw, 58px);
+
   line-height: 1;
+
   font-weight: 500;
+
   color: #ffffff;
 }
 
+
 /* =====================================================
-   PROJECT LIST
+   NAVIGATION
 ===================================================== */
 
-.projects-list {
-  border-top: 1px solid #d5d3ce;
-}
+.project-navigation {
+  position: absolute;
 
-.project-row {
-  position: relative;
+  left: 45px;
+  right: 45px;
+  bottom: 35px;
 
-  display: grid;
-  grid-template-columns: 55px 1fr 180px 45px;
-  gap: 25px;
+  z-index: 5;
+
+  display: flex;
+
   align-items: center;
 
-  padding: 28px 0;
+  justify-content: space-between;
+}
 
-  border-bottom: 1px solid #d5d3ce;
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.project-nav-arrow {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  color: #ffffff;
+
+  font-size: 20px;
 
   cursor: pointer;
 
   transition:
-    padding 0.35s ease,
-    background 0.35s ease;
-}
-
-.project-row:hover,
-.project-row.active {
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-.project-row::before {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  top: -1px;
-
-  width: 0;
-  height: 2px;
-
-  background: #f7941d;
-
-  transition: width 0.4s ease;
-}
-
-.project-row:hover::before,
-.project-row.active::before {
-  width: 100%;
-}
-
-.project-row-number {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 11px;
-  color: #999999;
-}
-
-.project-row h3 {
-  margin: 0;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 17px;
-  line-height: 1.35;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-
-  transition: color 0.3s ease;
-}
-
-.project-row:hover h3,
-.project-row.active h3 {
-  color: #f7941d;
-}
-
-.project-row-location {
-  font-family: "DM Sans", sans-serif;
-  font-size: 13px;
-  color: #777777;
-}
-
-.project-row-arrow {
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid #c9c7c1;
-  border-radius: 50%;
-
-  font-size: 15px;
-
-  transition:
     background 0.3s ease,
     border-color 0.3s ease,
-    color 0.3s ease,
     transform 0.3s ease;
 }
 
-.project-row:hover .project-row-arrow,
-.project-row.active .project-row-arrow {
+.project-nav-arrow:hover {
   background: #f7941d;
+
   border-color: #f7941d;
-  color: #ffffff;
-  transform: rotate(45deg);
+
+  transform: scale(1.08);
 }
+
+
+/* =====================================================
+   8 DOTS
+===================================================== */
+
+.project-dots {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.project-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition:
+    width 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.project-dot:hover {
+  background: #ffffff;
+
+  transform: scale(1.2);
+}
+
+.project-dot.active {
+  width: 28px;
+
+  border-radius: 999px;
+
+  background: #f7941d;
+}
+
 
 /* =====================================================
    FOOTER
@@ -312,7 +387,9 @@
 
 .projects-footer {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   gap: 40px;
@@ -324,26 +401,35 @@
   margin: 0;
 
   font-family: "DM Sans", sans-serif;
+
   font-size: 16px;
+
   color: #666666;
 }
 
 .projects-footer button {
   display: inline-flex;
+
   align-items: center;
+
   gap: 15px;
 
   padding: 15px 23px;
 
   border: 1px solid #111111;
+
   border-radius: 999px;
 
   background: #111111;
+
   color: #ffffff;
 
   font-family: "Space Grotesk", sans-serif;
+
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.08em;
 
   cursor: pointer;
@@ -359,9 +445,12 @@
 
 .projects-footer button:hover {
   background: #f7941d;
+
   border-color: #f7941d;
+
   transform: translateY(-3px);
 }
+
 
 /* =====================================================
    TABLET
@@ -375,22 +464,27 @@
 
   .projects-heading {
     grid-template-columns: 1fr;
+
     gap: 35px;
-    margin-bottom: 70px;
+
+    margin-bottom: 60px;
   }
 
-  .featured-image {
+  .project-slide-image {
     height: 550px;
   }
 
-  .project-row {
-    grid-template-columns: 45px 1fr 40px;
+  .project-slide-info {
+    left: 30px;
+    right: 30px;
   }
 
-  .project-row-location {
-    display: none;
+  .project-navigation {
+    left: 30px;
+    right: 30px;
   }
 }
+
 
 /* =====================================================
    MOBILE
@@ -404,56 +498,81 @@
 
   .projects-label {
     margin-bottom: 60px;
+
     gap: 15px;
   }
 
   .projects-heading h2 {
-    font-size: clamp(52px, 15vw, 76px);
+    font-size:
+      clamp(52px, 15vw, 76px);
   }
 
   .projects-intro {
     font-size: 15px;
   }
 
-  .featured-image {
-    height: 470px;
+  .project-slide-image {
+    height: 500px;
+
     border-radius: 24px;
   }
 
-  .featured-project-info {
+  .project-image-number {
+    top: 22px;
+    right: 22px;
+  }
+
+  .project-slide-info {
     left: 22px;
     right: 22px;
+
+    bottom: 95px;
+  }
+
+  .project-slide-info h3 {
+    font-size: 27px;
+
+    line-height: 1.05;
+  }
+
+  .project-slide-location {
+    font-size: 10px;
+
+    margin-bottom: 10px;
+  }
+
+  .project-navigation {
+    left: 22px;
+    right: 22px;
+
     bottom: 25px;
   }
 
-  .featured-project-info h3 {
-    font-size: 28px;
+  .project-nav-arrow {
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
   }
 
-  .project-row {
-    grid-template-columns: 30px 1fr 35px;
-    gap: 12px;
-    padding: 24px 0;
+  .project-dots {
+    gap: 6px;
   }
 
-  .project-row h3 {
-    font-size: 15px;
+  .project-dot {
+    width: 6px;
+    height: 6px;
   }
 
-  .project-row:hover,
-  .project-row.active {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .project-row-arrow {
-    width: 32px;
-    height: 32px;
+  .project-dot.active {
+    width: 22px;
   }
 
   .projects-footer {
     flex-direction: column;
+
     align-items: flex-start;
+
     margin-top: 50px;
   }
 }

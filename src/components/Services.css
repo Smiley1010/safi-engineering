@@ -14,15 +14,16 @@
   margin: 0 auto;
 }
 
+
 /* =====================================================
-   HEADER
+   SECTION LABEL
 ===================================================== */
 
 .services-label {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-bottom: 90px;
+  margin-bottom: 100px;
 
   font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
@@ -44,209 +45,56 @@
   background: #333333;
 }
 
-.services-heading {
+
+/* =====================================================
+   MAIN TWO-COLUMN LAYOUT
+===================================================== */
+
+.services-main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
-  margin-bottom: 100px;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 90px;
+
+  align-items: start;
 }
 
-.services-heading p {
-  margin: 0 0 28px;
 
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: #777777;
+/* =====================================================
+   LEFT SIDE
+===================================================== */
+
+.services-left {
+  display: flex;
+  flex-direction: column;
 }
 
-.services-heading h2 {
-  margin: 0;
 
-  font-family: "Playfair Display", serif;
+/* BIG HEADING */
+
+.services-heading-title {
+  margin: 0 0 110px;
+
+  font-family:
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
+
   font-size: clamp(58px, 7vw, 100px);
+
   line-height: 0.9;
+
   font-weight: 500;
+
   letter-spacing: -0.05em;
 }
 
-.services-heading h2 em {
+.services-heading-title em {
   color: #f7941d;
   font-style: italic;
 }
 
-.services-intro {
-  align-self: end;
-  max-width: 450px;
-}
-
-.services-intro p {
-  margin: 0;
-
-  font-family: "DM Sans", sans-serif;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #b7b7b7;
-}
-
-/* =====================================================
-   MAIN LAYOUT
-===================================================== */
-
-.services-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 70px;
-  align-items: stretch;
-}
-
-/* =====================================================
-   SERVICE LIST
-===================================================== */
-
-.services-list {
-  border-top: 1px solid #333333;
-}
-
-.service-item {
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 55px 1fr 45px;
-  gap: 25px;
-
-  padding: 30px 0;
-
-  border-bottom: 1px solid #333333;
-
-  cursor: pointer;
-
-  transition:
-    padding 0.35s ease,
-    border-color 0.35s ease;
-}
-
-.service-item::before {
-  content: "";
-
-  position: absolute;
-  top: -1px;
-  left: 0;
-
-  width: 0;
-  height: 2px;
-
-  background: #f7941d;
-
-  transition: width 0.4s ease;
-}
-
-.service-item.active {
-  padding-left: 18px;
-  padding-right: 18px;
-  border-color: #444444;
-}
-
-.service-item.active::before {
-  width: 100%;
-}
-
-.service-number {
-  padding-top: 4px;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  color: #777777;
-
-  transition: color 0.3s ease;
-}
-
-.service-item.active .service-number {
-  color: #f7941d;
-}
-
-/* =====================================================
-   SERVICE INFO
-===================================================== */
-
-.service-info h3 {
-  margin: 0;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(17px, 1.5vw, 23px);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-
-  transition: color 0.3s ease;
-}
-
-.service-item.active .service-info h3 {
-  color: #f7941d;
-}
-
-.service-description {
-  max-height: 0;
-  overflow: hidden;
-
-  opacity: 0;
-
-  transition:
-    max-height 0.45s ease,
-    opacity 0.35s ease,
-    margin-top 0.35s ease;
-}
-
-.service-item.active .service-description {
-  max-height: 180px;
-  opacity: 1;
-  margin-top: 18px;
-}
-
-.service-description p {
-  max-width: 600px;
-
-  margin: 0;
-
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #999999;
-}
-
-/* =====================================================
-   ARROW
-===================================================== */
-
-.service-arrow {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid #444444;
-  border-radius: 50%;
-
-  font-size: 17px;
-  color: #777777;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.service-item.active .service-arrow {
-  background: #f7941d;
-  border-color: #f7941d;
-  color: #ffffff;
-  transform: rotate(45deg);
-}
 
 /* =====================================================
    IMAGE PANEL
@@ -254,6 +102,8 @@
 
 .services-image-panel {
   position: relative;
+
+  width: 100%;
 
   min-height: 620px;
 
@@ -269,6 +119,7 @@
   height: 100%;
 
   position: absolute;
+
   inset: 0;
 
   object-fit: cover;
@@ -290,6 +141,7 @@
 
 .services-image-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
@@ -314,8 +166,11 @@
   margin-bottom: 10px;
 
   font-family: "Space Grotesk", sans-serif;
+
   font-size: 11px;
+
   color: #f7941d;
+
   letter-spacing: 0.12em;
 }
 
@@ -324,11 +179,264 @@
 
   max-width: 500px;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
+
   font-size: clamp(30px, 3vw, 48px);
+
   line-height: 1;
+
   font-weight: 500;
 }
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.services-right {
+  width: 100%;
+}
+
+
+/* =====================================================
+   WHAT WE DO / INTRO
+===================================================== */
+
+.services-intro {
+  margin-bottom: 70px;
+}
+
+.services-intro-label {
+  display: block;
+
+  margin-bottom: 42px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  color: #777777;
+}
+
+.services-intro p {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: #b7b7b7;
+}
+
+
+/* =====================================================
+   SERVICE LIST
+===================================================== */
+
+.services-list {
+  width: 100%;
+
+  border-top: 1px solid #333333;
+}
+
+
+/* =====================================================
+   SERVICE ITEM
+===================================================== */
+
+.service-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    55px 1fr 45px;
+
+  gap: 25px;
+
+  padding: 30px 0;
+
+  border-bottom: 1px solid #333333;
+
+  cursor: pointer;
+
+  transition:
+    padding 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #f7941d;
+
+  transition: width 0.4s ease;
+}
+
+.service-item.active {
+  padding-left: 18px;
+  padding-right: 18px;
+
+  border-color: #444444;
+}
+
+.service-item.active::before {
+  width: 100%;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.service-number {
+  padding-top: 4px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 12px;
+
+  color: #777777;
+
+  transition: color 0.3s ease;
+}
+
+.service-item.active .service-number {
+  color: #f7941d;
+}
+
+
+/* =====================================================
+   SERVICE INFO
+===================================================== */
+
+.service-info h3 {
+  margin: 0;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size:
+    clamp(17px, 1.5vw, 23px);
+
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+
+  transition: color 0.3s ease;
+}
+
+.service-item.active .service-info h3 {
+  color: #f7941d;
+}
+
+
+/* DESCRIPTION */
+
+.service-description {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.45s ease,
+    opacity 0.35s ease,
+    margin-top 0.35s ease;
+}
+
+.service-item.active .service-description {
+  max-height: 180px;
+
+  opacity: 1;
+
+  margin-top: 18px;
+}
+
+.service-description p {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #999999;
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.service-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #444444;
+
+  border-radius: 50%;
+
+  font-size: 17px;
+
+  color: #777777;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-item.active .service-arrow {
+  background: #f7941d;
+
+  border-color: #f7941d;
+
+  color: #ffffff;
+
+  transform: rotate(45deg);
+}
+
 
 /* =====================================================
    TABLET
@@ -340,25 +448,25 @@
     padding: 110px 6vw;
   }
 
-  .services-heading {
+  .services-main {
     grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 70px;
+
+    gap: 70px;
   }
 
-  .services-intro {
-    max-width: 600px;
-  }
-
-  .services-layout {
-    grid-template-columns: 1fr;
+  .services-heading-title {
+    margin-bottom: 60px;
   }
 
   .services-image-panel {
     min-height: 500px;
-    order: -1;
+  }
+
+  .services-intro {
+    margin-bottom: 50px;
   }
 }
+
 
 /* =====================================================
    MOBILE
@@ -372,24 +480,39 @@
 
   .services-label {
     margin-bottom: 60px;
+
     gap: 15px;
   }
 
-  .services-heading h2 {
-    font-size: clamp(52px, 15vw, 75px);
+  .services-heading-title {
+    font-size:
+      clamp(52px, 15vw, 75px);
+
+    margin-bottom: 50px;
+  }
+
+  .services-main {
+    gap: 45px;
+  }
+
+  .services-intro-label {
+    margin-bottom: 25px;
   }
 
   .services-intro p {
     font-size: 16px;
   }
 
-  .services-layout {
-    gap: 45px;
+  .services-intro {
+    margin-bottom: 40px;
   }
 
   .service-item {
-    grid-template-columns: 35px 1fr 35px;
+    grid-template-columns:
+      35px 1fr 35px;
+
     gap: 12px;
+
     padding: 25px 0;
   }
 
@@ -409,11 +532,13 @@
   .service-arrow {
     width: 34px;
     height: 34px;
+
     font-size: 14px;
   }
 
   .services-image-panel {
     min-height: 420px;
+
     border-radius: 24px;
   }
 

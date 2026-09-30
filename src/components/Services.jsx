@@ -7,35 +7,35 @@ const services = [
     title: "CIVIL INFRASTRUCTURE DEVELOPMENT",
     description:
       "We specialize in constructing robust civil infrastructure, including roads, bridges, and harbor works. Our projects are designed to enhance connectivity, support economic growth, and withstand the test of time.",
-    image: "/images/service-civil.jpg",
+    image: "/images/services1.png",
   },
   {
     number: "02",
     title: "BUILDING CONSTRUCTION",
     description:
       "From high-rise commercial towers to luxurious residential estates, we deliver exceptional building construction services tailored to your vision. Our expertise ensures quality, durability, and timely delivery, making your dream spaces a reality.",
-    image: "/images/service-building.jpg",
+    image: "/images/services2.png",
   },
   {
     number: "03",
     title: "ENGINEERING DESIGN (FEED & DED)",
     description:
       "Our engineering design services, including Front-End Engineering Design (FEED) and Detailed Engineering Design (DED), provide innovative and precise solutions for architectural, structural, mechanical, and electrical systems. We turn concepts into actionable plans.",
-    image: "/images/service-engineering.jpg",
+    image: "/images/services3.png",
   },
   {
     number: "04",
     title: "HEAVY INDUSTRIAL SYSTEM",
     description:
       "From refineries to water treatment plants, we provide cutting-edge solutions for heavy industrial systems. Our focus on innovation and sustainability ensures efficient and eco-friendly operations for your industrial needs.",
-    image: "/images/service-industrial.jpg",
+    image: "/images/services4.png",
   },
   {
     number: "05",
     title: "FACILITY MANAGEMENT AND PROCUREMENT",
     description:
       "We offer comprehensive facility management and procurement services, ensuring seamless operations and maintenance of your spaces. From space furnishing to operational support, we keep your facilities running smoothly.",
-    image: "/images/service-facility.jpg",
+    image: "/images/services5.png",
   },
 ];
 
@@ -44,87 +44,127 @@ const Services = () => {
 
   return (
     <section className="safi-services" id="services">
+
       <div className="services-container">
 
-        {/* HEADER */}
-        <div className="services-header">
+        {/* SECTION LABEL */}
+        <div className="services-label">
+          <span>SERVICES</span>
 
-          <div className="services-label">
-            <span>SERVICES</span>
-            <div></div>
-            <span>02</span>
-          </div>
+          <div></div>
 
-          <div className="services-heading">
-            <p>WHAT WE DO</p>
+          <span>02</span>
+        </div>
 
-            <h2>
+
+        {/* MAIN SERVICES LAYOUT */}
+        <div className="services-main">
+
+          {/* =========================
+              LEFT SIDE
+          ========================= */}
+
+          <div className="services-left">
+
+            <h2 className="services-heading-title">
               Built for
               <br />
               <em>what's next.</em>
             </h2>
-          </div>
 
-          <div className="services-intro">
-            <p>
-              Engineering and construction solutions delivered with precision,
-              quality, and a commitment to excellence.
-            </p>
-          </div>
 
-        </div>
+            {/* IMAGE */}
+            <div className="services-image-panel">
 
-        {/* SERVICES */}
-        <div className="services-layout">
+              <img
+                key={services[activeService].image}
+                src={services[activeService].image}
+                alt={services[activeService].title}
+              />
 
-          {/* SERVICE LIST */}
-          <div className="services-list">
+              <div className="services-image-overlay"></div>
 
-            {services.map((service, index) => (
-              <div
-                className={`service-item ${
-                  activeService === index ? "active" : ""
-                }`}
-                key={service.number}
-                onMouseEnter={() => setActiveService(index)}
-              >
-                <div className="service-number">
-                  {service.number}
-                </div>
+              <div className="services-image-content">
 
-                <div className="service-info">
-                  <h3>{service.title}</h3>
+                <span>
+                  {services[activeService].number}
+                </span>
 
-                  <div className="service-description">
-                    <p>{service.description}</p>
-                  </div>
-                </div>
+                <h3>
+                  {services[activeService].title}
+                </h3>
 
-                <div className="service-arrow">
-                  ↗
-                </div>
               </div>
-            ))}
+
+            </div>
 
           </div>
 
-          {/* IMAGE PANEL */}
-          <div className="services-image-panel">
 
-            <img
-              key={services[activeService].image}
-              src={services[activeService].image}
-              alt={services[activeService].title}
-            />
+          {/* =========================
+              RIGHT SIDE
+          ========================= */}
 
-            <div className="services-image-overlay"></div>
+          <div className="services-right">
 
-            <div className="services-image-content">
-              <span>{services[activeService].number}</span>
+            <div className="services-intro">
 
-              <h3>
-                {services[activeService].title}
-              </h3>
+              <span className="services-intro-label">
+                WHAT WE DO
+              </span>
+
+              <p>
+                Engineering and construction solutions delivered with
+                precision, quality, and a commitment to excellence.
+              </p>
+
+            </div>
+
+
+            {/* SERVICE LIST */}
+
+            <div className="services-list">
+
+              {services.map((service, index) => (
+
+                <div
+                  className={`service-item ${
+                    activeService === index ? "active" : ""
+                  }`}
+                  key={service.number}
+                  onMouseEnter={() => setActiveService(index)}
+                >
+
+                  <div className="service-number">
+                    {service.number}
+                  </div>
+
+
+                  <div className="service-info">
+
+                    <h3>
+                      {service.title}
+                    </h3>
+
+                    <div className="service-description">
+
+                      <p>
+                        {service.description}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+
+                  <div className="service-arrow">
+                    ↗
+                  </div>
+
+                </div>
+
+              ))}
+
             </div>
 
           </div>
@@ -132,6 +172,7 @@ const Services = () => {
         </div>
 
       </div>
+
     </section>
   );
 };

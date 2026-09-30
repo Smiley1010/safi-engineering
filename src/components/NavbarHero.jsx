@@ -30,6 +30,11 @@ export default function NavbarHero() {
     setMobileOpen(false);
   };
 
+  const openContactModal = () => {
+  window.dispatchEvent(new Event("open-safi-contact"));
+  setMobileOpen(false);
+};
+
   return (
     <section className="safi-hero" id="home">
 
@@ -37,7 +42,7 @@ export default function NavbarHero() {
 
       <img
         className="safi-hero-background"
-        src="/images/REPLACE-HERO-IMAGE.jpg"
+        src="/images/safiHeroBg.png"
         alt="SAFI Engineering and Construction"
       />
 
@@ -61,7 +66,7 @@ export default function NavbarHero() {
           onClick={() => scrollToSection("home")}
         >
           <img
-            src="/images/REPLACE-SAFI-LOGO.svg"
+            src="/images/safi logo.png"
             alt="SAFI Engineering & Construction Limited"
           />
         </button>
@@ -87,23 +92,18 @@ export default function NavbarHero() {
             Experience
           </button>
 
-          <button onClick={() => scrollToSection("contact")}>
-            Contact Us
-          </button>
-
         </nav>
 
 
         {/* NAVBAR CTA */}
 
-        <button
-          className="safi-navbar-button"
-          onClick={() => scrollToSection("contact")}
-        >
-          Contact Us
-          <span></span>
-        </button>
-
+       <button
+  className="safi-navbar-button"
+  onClick={openContactModal}
+>
+  Contact Us
+  <span></span>
+</button>
 
         {/* MOBILE BUTTON */}
 
@@ -147,10 +147,6 @@ export default function NavbarHero() {
           Experience
         </button>
 
-        <button onClick={() => scrollToSection("contact")}>
-          Contact Us
-        </button>
-
       </div>
 
 
@@ -174,12 +170,12 @@ export default function NavbarHero() {
           <div className="safi-hero-actions">
 
             <button
-              onClick={() => scrollToSection("contact")}
-              className="safi-hero-button safi-orange-button"
-            >
-              CONTACT US
-              <span></span>
-            </button>
+  onClick={openContactModal}
+  className="safi-hero-button safi-orange-button"
+>
+  CONTACT US
+  <span></span>
+</button>
 
             <button
               onClick={() => scrollToSection("projects")}

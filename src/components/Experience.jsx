@@ -14,26 +14,36 @@ const Experience = () => {
         </div>
 
         {/* MAIN HEADING */}
-        <div className="experience-heading">
-          <p>OUR ADVANTAGE</p>
+      {/* MAIN HEADING */}
+<div className="experience-heading">
 
-          <h2>
-            Competitive
-            <br />
-            <em>global advantages.</em>
-          </h2>
-        </div>
+  {/* LEFT — BIG HEADING */}
+  <div className="experience-heading-main">
+    <h2>
+      Competitive
+      <br />
+      <em>global advantages.</em>
+    </h2>
+  </div>
 
-        {/* INTRO */}
-        <div className="experience-intro">
-          <p>
-            At SAFI Engineering & Construction Limited, decades of experience
-            and cutting-edge technology form the foundation of our competitive
-            edge. With a proven track record in delivering complex projects
-            across diverse sectors, we bring unparalleled expertise to every
-            endeavor.
-          </p>
-        </div>
+  {/* RIGHT — LABEL + INTRO */}
+  <div className="experience-heading-side">
+
+    <p>OUR ADVANTAGE</p>
+
+    <div className="experience-intro">
+      <p>
+        At SAFI Engineering & Construction Limited, decades of experience
+        and cutting-edge technology form the foundation of our competitive
+        edge. With a proven track record in delivering complex projects
+        across diverse sectors, we bring unparalleled expertise to every
+        endeavor.
+      </p>
+    </div>
+
+  </div>
+
+</div>
 
         {/* FEATURE GRID */}
         <div className="experience-grid">

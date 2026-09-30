@@ -5,7 +5,7 @@
 .safi-experience {
   background: #ffffff;
   color: #111111;
-  padding: 160px 5vw 140px;
+  padding: 120px 5vw 70px;
   overflow: hidden;
 }
 
@@ -14,8 +14,9 @@
   margin: 0 auto;
 }
 
+
 /* =====================================================
-   TOP LABEL
+   SECTION LABEL
 ===================================================== */
 
 .experience-label {
@@ -23,7 +24,7 @@
   align-items: center;
   gap: 24px;
 
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 
   font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
@@ -42,218 +43,327 @@
 .experience-label div {
   flex: 1;
   height: 1px;
-  background: #dedede;
+  background: #d5d3ce;
 }
+
 
 /* =====================================================
    HEADING
 ===================================================== */
+/* =====================================================
+   HEADING
+===================================================== */
 
-.experience-heading p {
-  margin: 0 0 28px;
+.experience-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 100px;
+  align-items: end;
+
+  margin-bottom: 80px;
+}
+
+
+/* =====================================================
+   LEFT — BIG HEADING
+===================================================== */
+
+.experience-heading-main {
+  display: flex;
+  align-items: flex-end;
+}
+
+.experience-heading-main h2 {
+  margin: 0;
+
+  font-family:
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
+
+  font-size: clamp(60px, 7vw, 105px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -0.05em;
+}
+
+.experience-heading-main h2 em {
+  color: #f7941d;
+  font-style: italic;
+}
+
+
+/* =====================================================
+   RIGHT — LABEL + INTRO
+===================================================== */
+
+.experience-heading-side {
+  align-self: end;
+  padding-bottom: 5px;
+}
+
+.experience-heading-side > p {
+  margin: 0 0 25px;
 
   font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
+
   color: #777777;
 }
 
-.experience-heading h2 {
-  margin: 0;
-
-  font-family: "Playfair Display", serif;
-  font-size: clamp(65px, 8vw, 120px);
-  line-height: 0.88;
-  font-weight: 500;
-  letter-spacing: -0.055em;
-}
-
-.experience-heading h2 em {
-  color: #f7941d;
-  font-style: italic;
-}
-
-/* =====================================================
-   INTRO
-===================================================== */
-
 .experience-intro {
-  display: flex;
-  justify-content: flex-end;
-
-  margin-top: 70px;
-}
-
-.experience-intro p {
-  max-width: 620px;
+  max-width: 550px;
 
   margin: 0;
 
   font-family: "DM Sans", sans-serif;
-  font-size: 18px;
+
+  font-size: 17px;
+
   line-height: 1.8;
+
   color: #555555;
 }
 
+.experience-intro p {
+  margin: 0;
+}
+
+
 /* =====================================================
-   FEATURE GRID
+   THREE CARDS
 ===================================================== */
 
 .experience-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
 
-  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
 
-  margin-top: 110px;
+  gap: 0;
 
-  background: #dcdcdc;
+  width: 100%;
 
-  border: 1px solid #dcdcdc;
-  border-radius: 30px;
+  border-radius: 32px;
+
   overflow: hidden;
 }
 
+
 /* =====================================================
-   CARDS
+   ALL CARDS — EQUAL SIZE
 ===================================================== */
 
 .experience-card {
   position: relative;
 
-  min-height: 450px;
+  min-height: 480px;
+
+  height: 480px;
 
   padding: 42px 38px;
 
-  background: #f5f4f0;
-
   display: flex;
+
   flex-direction: column;
+
+  justify-content: space-between;
+
+  border-right: 1px solid #d5d3ce;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* =====================================================
+   CARD 01 — BLACK
+===================================================== */
+
+.experience-card-large {
+  background: #111111;
+
+  color: #ffffff;
+
+  border-right: 1px solid #333333;
+}
+
+
+/* =====================================================
+   CARD 02 — WARM OFF-WHITE
+===================================================== */
+
+.experience-card:nth-child(2) {
+  background: #f4f3ef;
+
+  color: #111111;
+}
+
+
+/* =====================================================
+   CARD 03 — WHITE
+===================================================== */
+
+.experience-card:nth-child(3) {
+  background: #ffffff;
+
+  color: #111111;
+
+  border-right: none;
+}
+
+
+/* =====================================================
+   CARD NUMBER
+===================================================== */
+
+.experience-card-number {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: #f7941d;
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.experience-card h3 {
+  margin: 0 0 28px;
+
+  max-width: 430px;
+
+  font-family:
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
+
+  font-size: clamp(36px, 3.2vw, 52px);
+
+  line-height: 0.98;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =====================================================
+   CARD BODY
+===================================================== */
+
+.experience-card p {
+  max-width: 430px;
+
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  color: #666666;
+}
+
+
+/* White text on black card */
+
+.experience-card-large p {
+  color: #bdbdbd;
+}
+
+/* =====================================================
+   CARD HOVER — ORANGE
+===================================================== */
+
+.experience-card {
+  position: relative;
+  overflow: hidden;
 
   transition:
     background 0.4s ease,
     color 0.4s ease;
 }
 
-.experience-card-large {
-  background: #111111;
-  color: #ffffff;
+
+/* Remove the old orange line */
+
+.experience-card::before {
+  display: none;
 }
+
+
+/* All cards become orange */
 
 .experience-card:hover {
   background: #f7941d;
   color: #ffffff;
 }
 
-.experience-card-number {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 11px;
-  color: #f7941d;
-  letter-spacing: 0.08em;
+
+/* Keep the text white when hovering */
+
+.experience-card:hover h3,
+.experience-card:hover p,
+.experience-card:hover .experience-card-number {
+  color: #ffffff;
 }
 
-.experience-card-large .experience-card-number {
-  color: #f7941d;
-}
-
-.experience-card h3 {
-  margin: auto 0 30px;
-
-  font-family: "Playfair Display", serif;
-  font-size: clamp(32px, 3vw, 52px);
-  line-height: 0.98;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-}
-
-.experience-card p {
-  margin: 0;
-
-  max-width: 430px;
-
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-
-  color: #777777;
-
-  transition: color 0.3s ease;
-}
-
-.experience-card-large p {
-  color: #aaaaaa;
-}
-
-.experience-card:hover p {
-  color: rgba(255, 255, 255, 0.85);
-}
 
 /* =====================================================
-   BOTTOM
+   REMOVE OLD INDIVIDUAL CARD HOVER COLORS
 ===================================================== */
 
-.experience-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 50px;
-  align-items: center;
-
-  margin-top: 90px;
-}
-
-.experience-bottom-line {
-  height: 1px;
-  background: #dcdcdc;
-}
-
-.experience-bottom p {
-  margin: 0;
-
-  font-family: "DM Sans", sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #666666;
-}
-
-.experience-bottom-accent {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.experience-bottom-accent span {
-  display: block;
-
-  width: 8px;
-  height: 8px;
-
-  border-radius: 50%;
-
+.experience-card-large:hover,
+.experience-card:nth-child(2):hover,
+.experience-card:nth-child(3):hover {
   background: #f7941d;
 }
 
-.experience-bottom-accent span:nth-child(2) {
-  width: 35px;
-  border-radius: 999px;
+/* =====================================================
+   REMOVE OLD DOT / ACCENT AREA
+===================================================== */
+
+.experience-bottom {
+  display: none;
 }
 
-.experience-bottom-accent span:nth-child(3) {
-  background: #111111;
+.experience-bottom-line {
+  display: none;
 }
+
+.experience-bottom-accent {
+  display: none;
+}
+
 
 /* =====================================================
    TABLET
 ===================================================== */
-
 @media (max-width: 950px) {
 
   .safi-experience {
-    padding: 110px 6vw;
+    padding: 100px 6vw 60px;
   }
 
-  .experience-heading h2 {
-    font-size: clamp(58px, 10vw, 90px);
+  .experience-heading {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-bottom: 60px;
+  }
+
+  .experience-heading-side {
+    padding-bottom: 0;
   }
 
   .experience-grid {
@@ -261,16 +371,14 @@
   }
 
   .experience-card {
-    min-height: 360px;
+    height: auto;
+    min-height: 400px;
+    border-right: none;
+    border-bottom: 1px solid #d5d3ce;
   }
 
-  .experience-bottom {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .experience-bottom-line {
-    display: none;
+  .experience-card:last-child {
+    border-bottom: none;
   }
 }
 
@@ -281,34 +389,30 @@
 @media (max-width: 600px) {
 
   .safi-experience {
-    padding: 90px 5vw;
+    padding: 90px 5vw 50px;
   }
 
   .experience-label {
-    margin-bottom: 65px;
+    margin-bottom: 60px;
+
     gap: 15px;
   }
 
   .experience-heading h2 {
-    font-size: clamp(50px, 14vw, 75px);
+    font-size:
+      clamp(52px, 15vw, 76px);
   }
 
   .experience-intro {
-    margin-top: 55px;
-  }
-
-  .experience-intro p {
-    font-size: 16px;
-  }
-
-  .experience-grid {
-    margin-top: 70px;
-    border-radius: 24px;
+    font-size: 15px;
   }
 
   .experience-card {
-    min-height: 390px;
-    padding: 30px 25px;
+    min-height: 380px;
+
+    height: 380px;
+
+    padding: 30px 26px;
   }
 
   .experience-card h3 {
@@ -319,7 +423,4 @@
     font-size: 14px;
   }
 
-  .experience-bottom {
-    margin-top: 60px;
-  }
 }

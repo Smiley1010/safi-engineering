@@ -18,7 +18,7 @@ const Footer = () => {
 
           <div className="footer-brand">
             <img
-              src="/images/REPLACE-SAFI-LOGO.svg"
+              src="/images/safi logo.png"
               alt="SAFI Engineering & Construction Limited"
             />
 
@@ -26,53 +26,60 @@ const Footer = () => {
               SAFI Engineering & Construction Limited
             </p>
           </div>
-
-          <div className="footer-navigation">
-            <span>NAVIGATION</span>
-
-            <button onClick={() => scrollToSection("home")}>
-              Home
-            </button>
-
-            <button onClick={() => scrollToSection("about")}>
-              About Us
-            </button>
-
-            <button onClick={() => scrollToSection("services")}>
-              Services
-            </button>
-
-            <button onClick={() => scrollToSection("projects")}>
-              Projects
-            </button>
-
-            <button onClick={() => scrollToSection("experience")}>
-              Experience
-            </button>
-
-            <button onClick={() => scrollToSection("contact")}>
-              Contact Us
-            </button>
-          </div>
-
-          <div className="footer-contact">
-            <span>CONTACT</span>
-
-            <a href="mailto:info@safi-engineering.com">
-              info@safi-engineering.com
-            </a>
-
-            <a href="tel:+2348128911478">
-              +234 812 891 1478
-            </a>
-          </div>
-
         </div>
 
-        {/* LARGE WORDMARK */}
-        <div className="footer-wordmark">
-          SAFI<span>.</span>
-        </div>
+       {/* WORDMARK + SIDE INFORMATION */}
+<div className="footer-wordmark-area">
+
+  <div className="footer-wordmark">
+    SAFI<span>.</span>
+  </div>
+
+  <div className="footer-side">
+
+    <div className="footer-navigation">
+      <span>NAVIGATION</span>
+
+      <button onClick={() => scrollToSection("home")}>
+        Home
+      </button>
+
+      <button onClick={() => scrollToSection("about")}>
+        About Us
+      </button>
+
+      <button onClick={() => scrollToSection("services")}>
+        Services
+      </button>
+
+      <button onClick={() => scrollToSection("projects")}>
+        Projects
+      </button>
+
+      <button onClick={() => scrollToSection("experience")}>
+        Experience
+      </button>
+
+      <button onClick={() => scrollToSection("contact")}>
+        Contact Us
+      </button>
+    </div>
+
+    <div className="footer-contact">
+      <span>CONTACT</span>
+
+      <a href="mailto:info@safi-engineering.com">
+        info@safi-engineering.com
+      </a>
+
+      <a href="tel:+2348128911478">
+        +234 812 891 1478
+      </a>
+    </div>
+
+  </div>
+
+</div>
 
         {/* BOTTOM */}
         <div className="footer-bottom">

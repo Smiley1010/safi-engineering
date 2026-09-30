@@ -4,26 +4,13 @@
 
 .safi-principles {
   position: relative;
-
   width: 100%;
-
-  padding:
-    150px 7vw
-    160px;
-
-  background:
-    #ffffff;
-
-  color:
-    #111111;
-
+  padding: 150px 6vw 1px;
+  background: #ffffff;
+  color: #111111;
   display: grid;
-
-  grid-template-columns:
-    0.85fr 1.4fr;
-
+  grid-template-columns: 0.85fr 1.4fr;
   gap: 8vw;
-
   overflow: hidden;
 }
 
@@ -33,10 +20,8 @@
    ========================================================= */
 
 .safi-principles-intro {
-  position: sticky;
-
-  top: 140px;
-
+  position: relative;
+  top: -9px;
   align-self: start;
 }
 
@@ -47,44 +32,22 @@
 
 .safi-section-label {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   margin-bottom: 35px;
-
-  color:
-    #777777;
-
-  font-family:
-    "Space Grotesk",
-    sans-serif;
-
-  font-size:
-    11px;
-
-  font-weight:
-    700;
-
-  letter-spacing:
-    0.18em;
-
-  text-transform:
-    uppercase;
+  color: #777777;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
-
 
 .safi-section-line {
   width: 38px;
-
   height: 2px;
-
-  background:
-    var(--safi-orange);
-
-  border-radius:
-    999px;
+  background: var(--safi-orange);
+  border-radius: 999px;
 }
 
 
@@ -94,37 +57,22 @@
 
 .safi-principles-intro h2 {
   margin: 0;
-
   max-width: 500px;
 
   font-family:
-    "Playfair Display",
-    serif;
+    "Trebuchet MS",
+    Trebuchet,
+    sans-serif;
 
-  font-size:
-    clamp(
-      60px,
-      6vw,
-      100px
-    );
-
-  font-weight:
-    500;
-
-  line-height:
-    0.88;
-
-  letter-spacing:
-    -0.055em;
+  font-size: clamp(60px, 6vw, 100px);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
 }
 
-
 .safi-principles-intro h2 em {
-  color:
-    var(--safi-orange);
-
-  font-style:
-    italic;
+  color: var(--safi-orange);
+  font-style: italic;
 }
 
 
@@ -145,35 +93,22 @@
   position: relative;
 
   display: grid;
-
-  grid-template-columns:
-    70px 210px 1fr;
-
+  grid-template-columns: 70px 170px 1fr;
   gap: 25px;
 
-  padding:
-    42px 0;
+  padding: 22px 0;
 
-  border-top:
-    1px solid #dddddd;
+  border-top: 1px solid #dddddd;
 
-  cursor:
-    pointer;
+  cursor: pointer;
 
   transition:
     padding 0.4s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-
 .safi-principle:last-child {
-  border-bottom:
-    1px solid #dddddd;
+  border-bottom: none;
 }
 
 
@@ -182,21 +117,16 @@
    ========================================================= */
 
 .safi-principle-number {
-  color:
-    var(--safi-orange);
+  color: var(--safi-orange);
 
   font-family:
     "Space Grotesk",
     sans-serif;
 
-  font-size:
-    13px;
+  font-size: 16px;
+  font-weight: 700;
 
-  font-weight:
-    700;
-
-  padding-top:
-    7px;
+  padding-top: 5px;
 }
 
 
@@ -205,21 +135,15 @@
    ========================================================= */
 
 .safi-principle-title h3 {
-  margin:
-    0;
+  margin: 0;
 
   font-family:
     "Space Grotesk",
     sans-serif;
 
-  font-size:
-    17px;
-
-  font-weight:
-    700;
-
-  letter-spacing:
-    -0.02em;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 
   transition:
     color 0.3s ease,
@@ -232,39 +156,27 @@
    ========================================================= */
 
 .safi-principle-content {
-  display:
-    flex;
-
-  align-items:
-    flex-start;
-
-  justify-content:
-    space-between;
-
-  gap:
-    30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
 }
 
-
 .safi-principle-content p {
-  max-width:
-    470px;
+  max-width: 470px;
 
-  margin:
-    0;
+  margin: 0;
 
-  color:
-    #666666;
+  color: #666666;
 
   font-family:
     "DM Sans",
     sans-serif;
 
-  font-size:
-    15px;
+  font-size: 16px;
 
-  line-height:
-    1.75;
+  /* tighter line spacing */
+  line-height: 1.45;
 }
 
 
@@ -273,41 +185,24 @@
    ========================================================= */
 
 .safi-principle-arrow {
-  flex-shrink:
-    0;
+  flex-shrink: 0;
 
-  width:
-    42px;
+  width: 42px;
+  height: 42px;
 
-  height:
-    42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  display:
-    flex;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
 
-  align-items:
-    center;
+  color: #111111;
+  font-size: 17px;
 
-  justify-content:
-    center;
+  opacity: 0;
 
-  border:
-    1px solid #dddddd;
-
-  border-radius:
-    50%;
-
-  color:
-    #111111;
-
-  font-size:
-    17px;
-
-  opacity:
-    0;
-
-  transform:
-    translateX(-10px);
+  transform: translateX(-10px);
 
   transition:
     opacity 0.35s ease,
@@ -323,40 +218,25 @@
    ========================================================= */
 
 .safi-principle:hover {
-  padding-left:
-    15px;
-
-  padding-right:
-    15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 
 .safi-principle:hover .safi-principle-title h3,
 .safi-principle.active .safi-principle-title h3 {
-  color:
-    var(--safi-orange);
-
-  transform:
-    translateX(5px);
+  color: var(--safi-orange);
+  transform: translateX(5px);
 }
-
 
 .safi-principle:hover .safi-principle-arrow,
 .safi-principle.active .safi-principle-arrow {
-  opacity:
-    1;
+  opacity: 1;
 
-  transform:
-    translateX(0);
+  transform: translateX(0);
 
-  background:
-    var(--safi-orange);
-
-  border-color:
-    var(--safi-orange);
-
-  color:
-    #ffffff;
+  background: var(--safi-orange);
+  border-color: var(--safi-orange);
+  color: #ffffff;
 }
 
 
@@ -365,42 +245,26 @@
    ========================================================= */
 
 .safi-principle::before {
-  content:
-    "";
+  content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
-  left:
-    0;
+  left: 0;
+  top: -1px;
 
-  top:
-    -1px;
+  width: 0;
+  height: 2px;
 
-  width:
-    0;
-
-  height:
-    2px;
-
-  background:
-    var(--safi-orange);
+  background: var(--safi-orange);
 
   transition:
     width 0.5s
-    cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 
 .safi-principle:hover::before,
 .safi-principle.active::before {
-  width:
-    100%;
+  width: 100%;
 }
 
 
@@ -411,31 +275,19 @@
 @media (max-width: 1000px) {
 
   .safi-principles {
-    grid-template-columns:
-      1fr;
-
-    gap:
-      70px;
-
-    padding:
-      120px 6vw;
+    grid-template-columns: 1fr;
+    gap: 70px;
+    padding: 120px 6vw;
   }
-
 
   .safi-principles-intro {
-    position:
-      relative;
-
-    top:
-      auto;
+    position: relative;
+    top: auto;
   }
-
 
   .safi-principles-intro h2 {
-    max-width:
-      700px;
+    max-width: 700px;
   }
-
 }
 
 
@@ -446,61 +298,39 @@
 @media (max-width: 700px) {
 
   .safi-principles {
-    padding:
-      90px 6vw
-      100px;
-
-    gap:
-      55px;
+    padding: 90px 6vw 100px;
+    gap: 55px;
   }
-
 
   .safi-principles-intro h2 {
-    font-size:
-      clamp(
-        55px,
-        16vw,
-        85px
-      );
+    font-size: clamp(
+      55px,
+      16vw,
+      85px
+    );
   }
-
 
   .safi-principle {
-    grid-template-columns:
-      45px 1fr;
-
-    gap:
-      12px;
-
-    padding:
-      30px 0;
+    grid-template-columns: 45px 1fr;
+    gap: 12px;
+    padding: 30px 0;
   }
-
 
   .safi-principle-title {
-    grid-column:
-      2;
+    grid-column: 2;
   }
-
 
   .safi-principle-content {
-    grid-column:
-      2;
-
-    margin-top:
-      12px;
+    grid-column: 2;
+    margin-top: 12px;
   }
-
 
   .safi-principle-content p {
-    font-size:
-      14px;
+    font-size: 14px;
+    line-height: 1.55;
   }
-
 
   .safi-principle-arrow {
-    display:
-      none;
+    display: none;
   }
-
 }

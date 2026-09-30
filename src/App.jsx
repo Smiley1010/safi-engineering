@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Clients from "./components/Clients";
+import ContactModal from "./components/ContactModal";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
          <Contact />
 
          <Footer />
+
+         <ContactModal />
 
       {/* More sections will come here */}
     </>

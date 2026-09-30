@@ -5,7 +5,7 @@
 .safi-clients {
   background: #ffffff;
   color: #111111;
-  padding: 150px 0 120px;
+  padding: 150px 0 80px;
   overflow: hidden;
 }
 
@@ -68,7 +68,7 @@
 .clients-heading h2 {
   margin: 0;
 
-  font-family: "Playfair Display", serif;
+  font-family: "Trebuchet MS", Trebuchet, sans-serif;
   font-size: clamp(62px, 8vw, 115px);
   line-height: 0.88;
   font-weight: 500;
@@ -89,6 +89,39 @@
   font-size: 17px;
   line-height: 1.8;
   color: #666666;
+}
+
+/* =====================================================
+   LOGO GROUP
+===================================================== */
+
+.clients-group {
+  width: 100%;
+}
+
+.clients-group-bottom {
+  margin-top: 0;
+}
+
+/* =====================================================
+   GROUP TITLE
+===================================================== */
+
+.clients-group-header {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 0 5vw 22px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #777777;
+}
+
+.clients-group-header span {
+  color: #f7941d;
 }
 
 /* =====================================================
@@ -115,8 +148,8 @@
   border-top: 1px solid #e5e5e5;
 }
 
-.marquee-row:last-child {
-  border-bottom: 1px solid #e5e5e5;
+.clients-group-bottom .marquee-row {
+  border-bottom: none;
 }
 
 /* =====================================================
@@ -132,13 +165,17 @@
   will-change: transform;
 }
 
-/* TOP → RIGHT */
+/* =====================================================
+   TOP → RIGHT
+===================================================== */
 
 .marquee-right .marquee-track {
   animation: moveRight 32s linear infinite;
 }
 
-/* BOTTOM → LEFT */
+/* =====================================================
+   BOTTOM → LEFT
+===================================================== */
 
 .marquee-left .marquee-track {
   animation: moveLeft 32s linear infinite;
@@ -151,17 +188,17 @@
 .client-logo {
   flex: 0 0 auto;
 
-  width: 230px;
-  height: 110px;
+  width: 270px;
+  height: 135px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 25px 35px;
+  padding: 30px 40px;
 
   border: 1px solid #e5e5e5;
-  border-radius: 22px;
+  border-radius: 24px;
 
   background: #ffffff;
 
@@ -216,13 +253,13 @@
 }
 
 /* =====================================================
-   BOTTOM
+   BOTTOM STATEMENT
 ===================================================== */
 
 .clients-bottom {
   max-width: 1400px;
 
-  margin: 75px auto 0;
+  margin: 55px auto 0;
 
   padding: 0 5vw;
 
@@ -253,13 +290,12 @@
 @media (max-width: 950px) {
 
   .safi-clients {
-    padding: 110px 0 90px;
+    padding: 110px 0 70px;
   }
 
   .clients-heading {
     grid-template-columns: 1fr;
     gap: 35px;
-
     margin-bottom: 75px;
   }
 
@@ -276,7 +312,7 @@
 @media (max-width: 600px) {
 
   .safi-clients {
-    padding: 90px 0 75px;
+    padding: 90px 0 60px;
   }
 
   .clients-container {
@@ -294,6 +330,11 @@
 
   .clients-intro {
     font-size: 15px;
+  }
+
+  .clients-group-header {
+    padding: 0 5vw 16px;
+    font-size: 9px;
   }
 
   .marquee-row {
@@ -326,7 +367,7 @@
   }
 
   .clients-bottom {
-    margin-top: 55px;
+    margin-top: 45px;
     padding: 0 5vw;
   }
 }
