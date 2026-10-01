@@ -146,9 +146,9 @@
   position: relative;
 
   width: 100%;
-  height: min(68vw, 720px);
+ height: min(52vw, 560px); /* reduced from 68vw, 720px */
 
-  min-height: 520px;
+  min-height: 420px; /* reduced from 520px */
 
   overflow: hidden;
 
