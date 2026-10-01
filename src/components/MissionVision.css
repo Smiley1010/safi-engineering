@@ -1,44 +1,53 @@
 /* =========================================================
    SAFI — MISSION / VISION / CORE VALUES
-   ========================================================= */
+========================================================= */
 
 .safi-principles {
   position: relative;
   width: 100%;
+
   padding: 150px 6vw 1px;
+
   background: #ffffff;
   color: #111111;
+
   display: grid;
   grid-template-columns: 0.85fr 1.4fr;
   gap: 8vw;
+
   overflow: hidden;
 }
 
 
 /* =========================================================
    INTRO
-   ========================================================= */
+========================================================= */
 
 .safi-principles-intro {
   position: relative;
   top: -9px;
+
   align-self: start;
 }
 
 
 /* =========================================================
    SMALL LABEL
-   ========================================================= */
+========================================================= */
 
 .safi-section-label {
   display: flex;
   align-items: center;
   gap: 12px;
+
   margin-bottom: 35px;
+
   color: #777777;
+
   font-family: "Space Grotesk", sans-serif;
   font-size: 11px;
   font-weight: 700;
+
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -46,39 +55,45 @@
 .safi-section-line {
   width: 38px;
   height: 2px;
+
   background: var(--safi-orange);
+
   border-radius: 999px;
 }
 
 
 /* =========================================================
    INTRO HEADING
-   ========================================================= */
+========================================================= */
 
 .safi-principles-intro h2 {
   margin: 0;
+
   max-width: 500px;
 
-  font-family:
-    "Trebuchet MS",
-    Trebuchet,
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(60px, 6vw, 100px);
+
   font-weight: 500;
+
   line-height: 0.88;
+
   letter-spacing: -0.055em;
+
+  color: #111111;
 }
 
 .safi-principles-intro h2 em {
   color: var(--safi-orange);
+
   font-style: italic;
 }
 
 
 /* =========================================================
    PRINCIPLES LIST
-   ========================================================= */
+========================================================= */
 
 .safi-principles-list {
   width: 100%;
@@ -87,13 +102,15 @@
 
 /* =========================================================
    INDIVIDUAL PRINCIPLE
-   ========================================================= */
+========================================================= */
 
 .safi-principle {
   position: relative;
 
   display: grid;
+
   grid-template-columns: 70px 170px 1fr;
+
   gap: 25px;
 
   padding: 22px 0;
@@ -102,9 +119,15 @@
 
   cursor: pointer;
 
+  /*
+    IMPORTANT:
+    No horizontal transform or padding movement.
+    The content stays completely stationary on hover.
+  */
+
   transition:
-    padding 0.4s
-    cubic-bezier(0.22, 1, 0.36, 1);
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .safi-principle:last-child {
@@ -114,16 +137,15 @@
 
 /* =========================================================
    NUMBER
-   ========================================================= */
+========================================================= */
 
 .safi-principle-number {
   color: var(--safi-orange);
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: 16px;
+
   font-weight: 700;
 
   padding-top: 5px;
@@ -132,33 +154,46 @@
 
 /* =========================================================
    TITLE
-   ========================================================= */
+========================================================= */
 
 .safi-principle-title h3 {
   margin: 0;
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  /*
+    SPACE GROTESK
+    Used for MISSION / VISION / CORE VALUES
+  */
+
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: 20px;
+
   font-weight: 700;
+
   letter-spacing: -0.02em;
 
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  color: #111111;
+
+  /*
+    Only the color changes on hover.
+    No movement.
+  */
+
+  transition: color 0.3s ease;
 }
 
 
 /* =========================================================
    CONTENT
-   ========================================================= */
+========================================================= */
 
 .safi-principle-content {
   display: flex;
+
   align-items: flex-start;
+
   justify-content: space-between;
+
   gap: 30px;
 }
 
@@ -169,20 +204,17 @@
 
   color: #666666;
 
-  font-family:
-    "DM Sans",
-    sans-serif;
+  font-family: "DM Sans", sans-serif;
 
   font-size: 16px;
 
-  /* tighter line spacing */
   line-height: 1.45;
 }
 
 
 /* =========================================================
    ARROW
-   ========================================================= */
+========================================================= */
 
 .safi-principle-arrow {
   flex-shrink: 0;
@@ -191,18 +223,23 @@
   height: 42px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   border: 1px solid #dddddd;
+
   border-radius: 50%;
 
   color: #111111;
+
+  font-family: "Space Grotesk", sans-serif;
+
   font-size: 17px;
 
   opacity: 0;
 
-  transform: translateX(-10px);
+  transform: scale(0.8);
 
   transition:
     opacity 0.35s ease,
@@ -215,34 +252,63 @@
 
 /* =========================================================
    HOVER STATE
-   ========================================================= */
+========================================================= */
+
+/*
+   IMPORTANT:
+   There is NO padding-left,
+   padding-right,
+   translateX,
+   or other movement here.
+
+   The entire row stays fixed in place.
+*/
 
 .safi-principle:hover {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
+
+  background: transparent;
 }
+
+
+/* =========================================================
+   TITLE HOVER
+========================================================= */
 
 .safi-principle:hover .safi-principle-title h3,
 .safi-principle.active .safi-principle-title h3 {
   color: var(--safi-orange);
-  transform: translateX(5px);
+
+  /*
+    Explicitly prevents horizontal movement.
+  */
+
+  transform: none;
 }
+
+
+/* =========================================================
+   ARROW HOVER
+========================================================= */
 
 .safi-principle:hover .safi-principle-arrow,
 .safi-principle.active .safi-principle-arrow {
   opacity: 1;
 
-  transform: translateX(0);
+  transform: scale(1);
 
   background: var(--safi-orange);
+
   border-color: var(--safi-orange);
+
   color: #ffffff;
 }
 
 
 /* =========================================================
    ORANGE ACTIVE LINE
-   ========================================================= */
+========================================================= */
 
 .safi-principle::before {
   content: "";
@@ -270,18 +336,21 @@
 
 /* =========================================================
    TABLET
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 1000px) {
 
   .safi-principles {
     grid-template-columns: 1fr;
+
     gap: 70px;
+
     padding: 120px 6vw;
   }
 
   .safi-principles-intro {
     position: relative;
+
     top: auto;
   }
 
@@ -293,12 +362,13 @@
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 700px) {
 
   .safi-principles {
     padding: 90px 6vw 100px;
+
     gap: 55px;
   }
 
@@ -312,7 +382,9 @@
 
   .safi-principle {
     grid-template-columns: 45px 1fr;
+
     gap: 12px;
+
     padding: 30px 0;
   }
 
@@ -322,15 +394,45 @@
 
   .safi-principle-content {
     grid-column: 2;
+
     margin-top: 12px;
   }
 
   .safi-principle-content p {
     font-size: 14px;
+
     line-height: 1.55;
   }
 
   .safi-principle-arrow {
     display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .safi-principles {
+    padding: 75px 6vw 90px;
+  }
+
+  .safi-principles-intro h2 {
+    font-size: clamp(
+      48px,
+      14vw,
+      70px
+    );
+  }
+
+  .safi-principle-title h3 {
+    font-size: 18px;
+  }
+
+  .safi-principle-content p {
+    font-size: 14px;
   }
 }

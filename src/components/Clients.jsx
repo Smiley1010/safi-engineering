@@ -1,4 +1,3 @@
-import React from "react";
 import "./Clients.css";
 
 const topClients = [
@@ -132,7 +131,7 @@ const Clients = () => {
       <div className="clients-group">
 
         <div className="clients-group-header">
-          <span>PROFESSIONAL PARTNERS & AFFILIATES</span>
+          <span>PROFESSIONAL PARTNERS & CLIENTS</span>
         </div>
 
         <div className="clients-marquee">
@@ -164,9 +163,6 @@ const Clients = () => {
 
       <div className="clients-group clients-group-bottom">
 
-        <div className="clients-group-header">
-          <span>CLIENTS WE'VE WORKED WITH</span>
-        </div>
 
         <div className="clients-marquee">
 
@@ -193,15 +189,7 @@ const Clients = () => {
 
       {/* BOTTOM STATEMENT */}
 
-      <div className="clients-bottom">
-
-        <span className="clients-bottom-line"></span>
-
-        <p>
-          Here are some of the clients we've had the privilege to work with.
-        </p>
-
-      </div>
+     
 
     </section>
   );

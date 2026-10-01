@@ -71,15 +71,14 @@
 }
 
 
-/* BIG HEADING */
+/* =====================================================
+   BIG HEADING
+===================================================== */
 
 .services-heading-title {
   margin: 0 0 110px;
 
-  font-family:
-    "Trebuchet MS",
-    Trebuchet,
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(58px, 7vw, 100px);
 
@@ -92,7 +91,10 @@
 
 .services-heading-title em {
   color: #f7941d;
+
   font-style: italic;
+
+  font-size: clamp(58px, 7vw, 81px);
 }
 
 
@@ -167,7 +169,10 @@
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 11px;
+  /* Increased from 11px */
+  font-size: 15px;
+
+  font-weight: 600;
 
   color: #f7941d;
 
@@ -179,10 +184,7 @@
 
   max-width: 500px;
 
-  font-family:
-    "Trebuchet MS",
-    Trebuchet,
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(30px, 3vw, 48px);
 
@@ -198,6 +200,12 @@
 
 .services-right {
   width: 100%;
+
+  /*
+    Moves the right-side content down slightly
+    so it aligns better with the image.
+  */
+  padding-top: 70px;
 }
 
 
@@ -207,16 +215,16 @@
 
 .services-intro {
   margin-bottom: 70px;
+
+  transform: translateY(-35px);
 }
 
 .services-intro-label {
   display: block;
 
-  margin-bottom: 42px;
+  margin-bottom: 45px;
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: 12px;
 
@@ -229,12 +237,9 @@
 
 .services-intro p {
   max-width: 650px;
-
   margin: 0;
 
-  font-family:
-    "DM Sans",
-    sans-serif;
+  font-family: "DM Sans", sans-serif;
 
   font-size: 18px;
 
@@ -275,9 +280,14 @@
 
   cursor: pointer;
 
+  /*
+    Only visual properties transition.
+    No padding transition = no horizontal movement.
+  */
+
   transition:
-    padding 0.35s ease,
-    border-color 0.35s ease;
+    border-color 0.35s ease,
+    background 0.35s ease;
 }
 
 .service-item::before {
@@ -296,9 +306,28 @@
   transition: width 0.4s ease;
 }
 
+
+/* =====================================================
+   ACTIVE SERVICE
+===================================================== */
+
+/*
+   IMPORTANT:
+   No padding-left or padding-right here.
+
+   Previously:
+
+   padding-left: 18px;
+   padding-right: 18px;
+
+   Those values caused the text to move to the right.
+
+   Now the entire row stays completely stationary.
+*/
+
 .service-item.active {
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 0;
+  padding-right: 0;
 
   border-color: #444444;
 }
@@ -315,9 +344,7 @@
 .service-number {
   padding-top: 4px;
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: 12px;
 
@@ -338,9 +365,7 @@
 .service-info h3 {
   margin: 0;
 
-  font-family:
-    "Space Grotesk",
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size:
     clamp(17px, 1.5vw, 23px);
@@ -351,15 +376,30 @@
 
   letter-spacing: -0.02em;
 
+  color: #ffffff;
+
+  /*
+    Only color changes.
+    No transform or horizontal movement.
+  */
+
   transition: color 0.3s ease;
 }
 
 .service-item.active .service-info h3 {
   color: #f7941d;
+
+  /*
+    Explicitly prevents movement.
+  */
+
+  transform: none;
 }
 
 
-/* DESCRIPTION */
+/* =====================================================
+   DESCRIPTION
+===================================================== */
 
 .service-description {
   max-height: 0;
@@ -387,9 +427,7 @@
 
   margin: 0;
 
-  font-family:
-    "DM Sans",
-    sans-serif;
+  font-family: "DM Sans", sans-serif;
 
   font-size: 15px;
 
@@ -415,6 +453,8 @@
   border: 1px solid #444444;
 
   border-radius: 50%;
+
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: 17px;
 
@@ -465,6 +505,10 @@
   .services-intro {
     margin-bottom: 50px;
   }
+
+  .services-right {
+    padding-top: 0;
+  }
 }
 
 
@@ -507,6 +551,10 @@
     margin-bottom: 40px;
   }
 
+  .services-right {
+    padding-top: 0;
+  }
+
   .service-item {
     grid-template-columns:
       35px 1fr 35px;
@@ -516,9 +564,13 @@
     padding: 25px 0;
   }
 
+  /*
+    Still no horizontal movement on mobile.
+  */
+
   .service-item.active {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .service-info h3 {
@@ -546,5 +598,9 @@
     left: 22px;
     right: 22px;
     bottom: 22px;
+  }
+
+  .services-image-content span {
+    font-size: 14px;
   }
 }

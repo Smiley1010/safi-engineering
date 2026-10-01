@@ -64,7 +64,7 @@
   background: transparent;
   color: #ffffff;
 
-  font-family: Arial, sans-serif;
+ font-family: "Space Grotesk", sans-serif;
   font-size: 28px;
   font-weight: 300;
 
@@ -110,10 +110,7 @@
 .contact-modal-header h2 {
   margin: 0;
 
-  font-family:
-    "Trebuchet MS",
-    Trebuchet,
-    sans-serif;
+font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(48px, 7vw, 82px);
 

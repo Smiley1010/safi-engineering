@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./NavbarHero.css";
 
 export default function NavbarHero() {
@@ -31,20 +31,28 @@ export default function NavbarHero() {
   };
 
   const openContactModal = () => {
-  window.dispatchEvent(new Event("open-safi-contact"));
-  setMobileOpen(false);
-};
+    window.dispatchEvent(new Event("open-safi-contact"));
+    setMobileOpen(false);
+  };
 
   return (
     <section className="safi-hero" id="home">
 
-      {/* HERO IMAGE */}
+      {/* =====================================================
+          HERO VIDEO
+      ===================================================== */}
 
-      <img
+      <video
         className="safi-hero-background"
-        src="/images/safiHeroBg.png"
-        alt="SAFI Engineering and Construction"
-      />
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src="/videos/safiHero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       <div className="safi-hero-overlay"></div>
 
@@ -97,13 +105,14 @@ export default function NavbarHero() {
 
         {/* NAVBAR CTA */}
 
-       <button
-  className="safi-navbar-button"
-  onClick={openContactModal}
->
-  Contact Us
-  <span></span>
-</button>
+        <button
+          className="safi-navbar-button"
+          onClick={openContactModal}
+        >
+          Contact Us
+          <span></span>
+        </button>
+
 
         {/* MOBILE BUTTON */}
 
@@ -170,12 +179,12 @@ export default function NavbarHero() {
           <div className="safi-hero-actions">
 
             <button
-  onClick={openContactModal}
-  className="safi-hero-button safi-orange-button"
->
-  CONTACT US
-  <span></span>
-</button>
+              onClick={openContactModal}
+              className="safi-hero-button safi-orange-button"
+            >
+              CONTACT US
+              <span></span>
+            </button>
 
             <button
               onClick={() => scrollToSection("projects")}
@@ -192,7 +201,9 @@ export default function NavbarHero() {
       </div>
 
 
-      {/* SCROLL */}
+      {/* =====================================================
+          SCROLL INDICATOR
+      ===================================================== */}
 
       <div className="safi-scroll-indicator">
 

@@ -77,7 +77,7 @@
 
 .about-heading h2 {
   margin: 0;
-   font-family: "Trebuchet MS", Trebuchet, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(52px, 6vw, 92px);
   line-height: 0.94;
   font-weight: 500;
@@ -194,7 +194,7 @@
   align-items: center;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.12em;
   color: #ffffff;

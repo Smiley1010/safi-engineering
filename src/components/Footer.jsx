@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 
 const Footer = () => {
@@ -17,10 +16,7 @@ const Footer = () => {
         <div className="footer-top">
 
           <div className="footer-brand">
-            <img
-              src="/images/safi logo.png"
-              alt="SAFI Engineering & Construction Limited"
-            />
+            
 
             <p>
               SAFI Engineering & Construction Limited
@@ -83,7 +79,7 @@ const Footer = () => {
 
         {/* BOTTOM */}
         <div className="footer-bottom">
-
+<div className="footer-stack">
           <span>
             © {new Date().getFullYear()} SAFI Engineering & Construction
             Limited
@@ -92,7 +88,7 @@ const Footer = () => {
           <span>
             All rights reserved.
           </span>
-
+</div>
           <button onClick={() => scrollToSection("home")}>
             BACK TO TOP ↑
           </button>

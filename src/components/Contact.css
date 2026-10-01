@@ -95,7 +95,7 @@
 .contact-heading h2 {
   margin: 0;
 
-  font-family: "Playfair Display", serif;
+   font-family: "Space Grotesk", sans-serif;
 
   /* Smaller so the heading stays inside the left column */
   font-size: clamp(58px, 6.5vw, 100px);

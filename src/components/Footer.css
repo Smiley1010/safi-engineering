@@ -5,7 +5,7 @@
 .safi-footer {
   background: #f4f3ef;
   color: #111111;
-  padding: 90px 5vw 30px;
+  padding: 70px 5vw 30px;
   overflow: hidden;
 }
 
@@ -27,7 +27,7 @@
 
   gap: 0;
 
-  padding-bottom: 70px;
+  padding-bottom: 40px;
 }
 
 
@@ -127,7 +127,7 @@
   margin-bottom: 22px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.15em;
   color: #f7941d;
@@ -141,7 +141,7 @@
   background: transparent;
 
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #555555;
 
   cursor: pointer;
@@ -167,7 +167,7 @@
   color: #555555;
 
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 
   text-decoration: none;
 
@@ -192,9 +192,14 @@
   padding-top: 35px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: #888888;
+}
+
+.footer-stack{
+  display: grid;
+  margin-left: 20px;
 }
 
 .footer-bottom button {
@@ -204,7 +209,7 @@
   background: transparent;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 

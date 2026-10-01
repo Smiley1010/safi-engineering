@@ -1,231 +1,307 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Projects.css";
 
-const projects = [
+/*
+  PROJECT DATA
+  ------------------------------------
+  Keep your actual SAFI project images
+  inside /public/images/projects/
+
+  Each project can have multiple images.
+*/
+
+const completedProjects = [
   {
-    number: "01",
-    title:
-      "RE-CONSTRUCTION AND FURNISHING OF 4 BEDROOM FLAT AT ROAD 6 WOJI ESTATE, PORT HARCOURT, RIVERS STATE.",
-    location: "Port Harcourt, Rivers State",
-    image: "/images/project-01.jpg",
+    title: "PROJECT 01",
+    location: "LAGOS STATE",
+    images: [
+      "/images/projects/project-01.jpg",
+      "/images/projects/project-01-2.jpg",
+      "/images/projects/project-01-3.jpg",
+      "/images/projects/project-01-4.jpg",
+    ],
   },
   {
-    number: "02",
-    title:
-      "CONSTRUCTION OF OFFICE COMPLEX FOR CONOIL AT APAPA, LAGOS STATE",
-    location: "Apapa, Lagos State",
-    image: "/images/project-02.jpg",
+    title: "PROJECT 02",
+    location: "ABUJA",
+    images: [
+      "/images/projects/project-02.jpg",
+      "/images/projects/project-02-2.jpg",
+      "/images/projects/project-02-3.jpg",
+    ],
   },
   {
-    number: "03",
-    title:
-      "CONTRACT FOR THE RENOVATION OF THE EXECUTIVE SECRETARY’S OUTSTATION RESIDENCE IN YENAGOA, BAYELSA STATE.",
-    location: "Yenagoa, Bayelsa State",
-    image: "/images/project-03.jpg",
+    title: "PROJECT 03",
+    location: "PORT HARCOURT",
+    images: [
+      "/images/projects/project-03.jpg",
+      "/images/projects/project-03-2.jpg",
+      "/images/projects/project-03-3.jpg",
+    ],
   },
   {
-    number: "04",
-    title:
-      "RE-CONSTRUCTION OF ST COSI RETAIL OUTLET AT OWEERI IMO STATE",
-    location: "Owerri, Imo State",
-    image: "/images/project-04.jpg",
+    title: "PROJECT 04",
+    location: "LAGOS STATE",
+    images: [
+      "/images/projects/project-04.jpg",
+      "/images/projects/project-04-2.jpg",
+      "/images/projects/project-04-3.jpg",
+    ],
+  },
+];
+
+const ongoingProjects = [
+  {
+    title: "PROJECT 05",
+    location: "LAGOS STATE",
+    images: [
+      "/images/projects/project-05.jpg",
+      "/images/projects/project-05-2.jpg",
+      "/images/projects/project-05-3.jpg",
+    ],
   },
   {
-    number: "05",
-    title:
-      "ASPHALTIC ROAD AT OGUNLABALE, TRAN-AMADI SHOPPING MALL AND POLICE STATION, PORT HARCOURT",
-    location: "Port Harcourt, Rivers State",
-    image: "/images/project-05.jpg",
-  },
-  {
-    number: "06",
-    title:
-      "RENOVATION AND FURNISHING OF DATI CEO RESIDENCE AT VICTORY PARK ESTATE LEKKI LAGOS",
-    location: "Lekki, Lagos State",
-    image: "/images/project-06.jpg",
-  },
-  {
-    number: "07",
-    title:
-      "ASPHALTIC ROAD REPAIR AT MARYLAND AND ONIPANU IN LAGOS STATE",
-    location: "Lagos State",
-    image: "/images/project-07.jpg",
-  },
-  {
-    number: "08",
-    title:
-      "RE-CONSTRUCTION OF LG/HISENSE FOUANI SHOW ROOM AT TRANS-AMADI INDUSTRIAL LAYOUT – PORT HARCOURT, RIVERS STATE",
-    location: "Port Harcourt, Rivers State",
-    image: "/images/project-08.jpg",
+    title: "PROJECT 06",
+    location: "ABUJA",
+    images: [
+      "/images/projects/project-06.jpg",
+      "/images/projects/project-06-2.jpg",
+      "/images/projects/project-06-3.jpg",
+    ],
   },
 ];
 
 const Projects = () => {
+  const [activeTab, setActiveTab] = useState("completed");
   const [activeProject, setActiveProject] = useState(0);
+  const [activeImage, setActiveImage] = useState(0);
+  const [isChanging, setIsChanging] = useState(false);
 
-  const nextProject = () => {
-    setActiveProject((current) =>
-      current === projects.length - 1 ? 0 : current + 1
-    );
+  const projects =
+    activeTab === "completed"
+      ? completedProjects
+      : ongoingProjects;
+
+  const currentProject = projects[activeProject];
+
+  /*
+    Change category
+  */
+  const changeTab = (tab) => {
+    setActiveTab(tab);
+    setActiveProject(0);
+    setActiveImage(0);
   };
 
-  const previousProject = () => {
-    setActiveProject((current) =>
-      current === 0 ? projects.length - 1 : current - 1
-    );
+  /*
+    Change project
+  */
+  const changeProject = (index) => {
+    if (index === activeProject) return;
+
+    setIsChanging(true);
+
+    setTimeout(() => {
+      setActiveProject(index);
+      setActiveImage(0);
+
+      setTimeout(() => {
+        setIsChanging(false);
+      }, 50);
+    }, 180);
   };
 
-  const goToProject = (index) => {
-    setActiveProject(index);
+  /*
+    Change image
+  */
+  const changeImage = (index) => {
+    if (index === activeImage) return;
+
+    setIsChanging(true);
+
+    setTimeout(() => {
+      setActiveImage(index);
+
+      setTimeout(() => {
+        setIsChanging(false);
+      }, 50);
+    }, 180);
   };
 
-  const project = projects[activeProject];
+  /*
+    Reset image when project changes
+  */
+  useEffect(() => {
+    setActiveImage(0);
+  }, [activeProject]);
 
   return (
     <section className="safi-projects" id="projects">
       <div className="projects-container">
 
-        {/* =====================================================
-            SECTION LABEL
-        ===================================================== */}
-
+        {/* SECTION LABEL */}
         <div className="projects-label">
           <span>PROJECTS</span>
-
           <div></div>
-
           <span>03</span>
         </div>
 
-
-        {/* =====================================================
-            HEADING
-        ===================================================== */}
-
+        {/* HEADING */}
         <div className="projects-heading">
-
           <div>
-            <p>OUR WORK</p>
-
             <h2>
-              Selected
+              Built with
               <br />
-              <em>projects.</em>
+              <em>precision.</em>
             </h2>
           </div>
 
-          <p className="projects-intro">
-            SAFI Engineering & Construction Limited has successfully
-            delivered a diverse portfolio of projects, ranging from
-            high-rise buildings and luxury residences to industrial
-            facilities and civil infrastructure.
-          </p>
-
+          <div className="projects-intro">
+            <p>
+              From residential developments to complex infrastructure,
+              every SAFI project reflects our commitment to quality,
+              precision, and excellence.
+            </p>
+          </div>
         </div>
 
+        {/* COMPLETED / ON-GOING */}
+        <div className="projects-filter">
+          <button
+            className={activeTab === "completed" ? "active" : ""}
+            onClick={() => changeTab("completed")}
+          >
+            COMPLETED
+          </button>
 
-        {/* =====================================================
-            PROJECT SLIDESHOW
-        ===================================================== */}
+          <button
+            className={activeTab === "ongoing" ? "active" : ""}
+            onClick={() => changeTab("ongoing")}
+          >
+            ON-GOING
+          </button>
+        </div>
 
-        <div className="projects-slideshow">
+        {/* PROJECT SHOWCASE */}
+        {currentProject && (
+          <div className="projects-showcase">
 
-          {/* IMAGE */}
+            {/* MAIN IMAGE */}
+            <div className="projects-main-image">
 
-          <div className="project-slide-image">
+              <button
+  className="projects-arrow projects-arrow-left"
+  onClick={() =>
+    changeProject(
+      activeProject === 0
+        ? projects.length - 1
+        : activeProject - 1
+    )
+  }
+  aria-label="Previous project"
+>
+  ←
+</button>
 
-            <img
-              key={project.image}
-              src={project.image}
-              alt={project.title}
-            />
+<button
+  className="projects-arrow projects-arrow-right"
+  onClick={() =>
+    changeProject(
+      activeProject === projects.length - 1
+        ? 0
+        : activeProject + 1
+    )
+  }
+  aria-label="Next project"
+>
+  →
+</button>
 
-            <div className="project-image-overlay"></div>
+              <img
+                src={currentProject.images[activeImage]}
+                alt={currentProject.title}
+                className={isChanging ? "image-changing" : ""}
+              />
 
-            <div className="project-image-number">
-              {project.number}
+              <div className="projects-image-overlay"></div>
+
+              <div className="projects-image-number">
+                <span>
+                  {String(activeProject + 1).padStart(2, "0")}
+                </span>
+
+                <span className="projects-image-total">
+                  /
+                  {String(projects.length).padStart(2, "0")}
+                </span>
+              </div>
+
             </div>
 
-          </div>
+            {/* PROJECT INFORMATION */}
+            <div className="projects-project-info">
 
+              <div className="projects-project-number">
+                {String(activeProject + 1).padStart(2, "0")}
+              </div>
 
-          {/* PROJECT INFORMATION */}
+              <div className="projects-project-details">
+                <h3>{currentProject.title}</h3>
 
-          <div className="project-slide-info">
+                <p>{currentProject.location}</p>
+              </div>
 
-            <div className="project-slide-location">
-              {project.location}
             </div>
 
-            <h3>
-              {project.title}
-            </h3>
+            {/* IMAGE THUMBNAILS */}
+            <div className="projects-thumbnails">
 
-          </div>
-
-
-          {/* NAVIGATION */}
-
-          <div className="project-navigation">
-
-            <button
-              className="project-nav-arrow"
-              onClick={previousProject}
-              aria-label="Previous project"
-            >
-              ←
-            </button>
-
-
-            {/* 8 DOTS */}
-
-            <div className="project-dots">
-
-              {projects.map((item, index) => (
-
+              {currentProject.images.map((image, index) => (
                 <button
-                  key={item.number}
-                  className={`project-dot ${
-                    activeProject === index ? "active" : ""
-                  }`}
-                  onClick={() => goToProject(index)}
-                  aria-label={`Go to project ${item.number}`}
-                />
-
+                  key={image}
+                  className={
+                    activeImage === index
+                      ? "project-thumbnail active"
+                      : "project-thumbnail"
+                  }
+                  onClick={() => changeImage(index)}
+                >
+                  <img
+                    src={image}
+                    alt={`${currentProject.title} ${index + 1}`}
+                  />
+                </button>
               ))}
 
             </div>
 
+            {/* PROJECT DOTS */}
+            <div className="projects-navigation">
 
-            <button
-              className="project-nav-arrow"
-              onClick={nextProject}
-              aria-label="Next project"
-            >
-              →
-            </button>
+              <div className="projects-dots">
+                {projects.map((_, index) => (
+                  <button
+                    key={index}
+                    aria-label={`View project ${index + 1}`}
+                    className={
+                      activeProject === index
+                        ? "project-dot active"
+                        : "project-dot"
+                    }
+                    onClick={() => changeProject(index)}
+                  />
+                ))}
+              </div>
+
+              <span className="projects-navigation-text">
+                {String(activeProject + 1).padStart(2, "0")} /{" "}
+                {String(projects.length).padStart(2, "0")}
+              </span>
+
+            </div>
 
           </div>
-
-        </div>
-
-
-        {/* =====================================================
-            FOOTER
-        ===================================================== */}
-
-        <div className="projects-footer">
-
-          <p>
-            Explore our gallery to see how we transform visions into reality.
-          </p>
-
-          <button>
-            ALL PROJECTS
-            <span>↗</span>
-          </button>
-
-        </div>
+        )}
 
       </div>
     </section>

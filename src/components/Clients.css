@@ -68,7 +68,7 @@
 .clients-heading h2 {
   margin: 0;
 
-  font-family: "Trebuchet MS", Trebuchet, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(62px, 8vw, 115px);
   line-height: 0.88;
   font-weight: 500;
@@ -114,7 +114,7 @@
   padding: 0 5vw 22px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.16em;
   color: #777777;
@@ -279,7 +279,7 @@
   margin: 0;
 
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #777777;
 }
 

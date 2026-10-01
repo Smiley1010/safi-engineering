@@ -76,10 +76,7 @@
 .experience-heading-main h2 {
   margin: 0;
 
-  font-family:
-    "Trebuchet MS",
-    Trebuchet,
-    sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(60px, 7vw, 105px);
 
@@ -242,10 +239,7 @@
 
   max-width: 430px;
 
-  font-family:
-    "Trebuchet MS",
-    Trebuchet,
-    sans-serif;
+ font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(36px, 3.2vw, 52px);
 
