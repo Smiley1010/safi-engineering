@@ -181,21 +181,51 @@ const completedProjects = [
 
 const ongoingProjects = [
   {
-    title: "PROJECT 05",
-    location: "LAGOS STATE",
+    title: "14 UNITS OF 5 BEDROOM DUPLEX TERRACES - INTEGRATED OIL AND GAS",
+    location: "LEKKI - LAGOS STATE",
     images: [
-      "/images/projects/project-05.jpg",
-      "/images/projects/project-05-2.jpg",
-      "/images/projects/project-05-3.jpg",
+      "/images/ongoing1a.png",
+      "/images/ongoing1b.png",
+      "/images/ongoing1c.jpg",
+      "/images/ongoing1d.jpg",
+      "/images/ongoing1e.jpg",
+      "/images/ongoing1f.jpg",
     ],
   },
-  {
-    title: "PROJECT 06",
-    location: "ABUJA",
+ {
+    title: "IKORODU ITOIKIN CONTAINER TERMINAL - INTEGRATED OIL AND GAS",
+    location: "IKORODU - LAGOS STATE",
     images: [
-      "/images/projects/project-06.jpg",
-      "/images/projects/project-06-2.jpg",
-      "/images/projects/project-06-3.jpg",
+      "/images/ongoing2a.png",
+      "/images/ongoing2b.png",
+      "/images/ongoing2c.png",
+      "/images/ongoing2d.jpg",
+      "/images/ongoing2e.jpg",
+      "/images/ongoing2f.jpg",
+    ],
+  },
+   {
+    title: "5 UNITS OF 5 BEDROOM DUPLEX TERRACES - INTEGRATED OIL AND GA5",
+    location: "JAHI ABUJA - FCT",
+    images: [
+      "/images/ongoing3a.jpg",
+      "/images/ongoing3b.jpg",
+      "/images/ongoing3c.jpg",
+      "/images/ongoing3d.jpg",
+      "/images/ongoing3e.jpg",
+      "/images/ongoing3f.jpg",
+    ],
+  },
+   {
+    title: "RETAIL OUTLET - INTEGRATED OIL AND GAS",
+    location: "MPAPE - ABUJA - FCT",
+    images: [
+      "/images/ongoing4b.jpg",
+      "/images/ongoing4a.jpg",
+      "/images/ongoing4c.jpg",
+      "/images/ongoing4d.jpg",
+      "/images/ongoing4e.jpg",
+      "/images/ongoing4f.jpg",
     ],
   },
 ];
